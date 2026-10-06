@@ -32,16 +32,13 @@ class Info extends BaseInfo
     }
 
     /**
-     * The admin panel in the admin; Magento's default payment info everywhere else (e-mails set the area to
-     * frontend and secure mode, PDFs use their own template).
+     * The admin panel in the admin; Magento's default payment info everywhere else (e-mails set the block's area
+     * to frontend, PDFs use their own template).
      */
     public function getTemplate()
     {
         $template = parent::getTemplate();
-        if ($template === 'Magento_Payment::info/default.phtml'
-            && !$this->getIsSecureMode()
-            && $this->getArea() === Area::AREA_ADMINHTML
-        ) {
+        if ($template === 'Magento_Payment::info/default.phtml' && $this->getArea() === Area::AREA_ADMINHTML) {
             return 'Softaware_IyzicoPayment::info/admin.phtml';
         }
         return $template;

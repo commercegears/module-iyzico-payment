@@ -81,29 +81,32 @@ class Result implements HttpGetActionInterface
                 }
                 return $this->page($order, $order->getState() === Order::STATE_PAYMENT_REVIEW ? 'review' : 'paid', '');
 
-            case Order::STATE_PENDING_PAYMENT:
-            case Order::STATE_NEW:
-                return $this->page($order, 'pending', '');
-
-            default:
-                $message = (string)$this->failureMessage($order);
+            case Order::STATE_CANCELED:
+                $message = (string)$this->failureMessage($order, $isOwnSession);
                 if ($isOwnSession) {
                     $this->checkoutSession->restoreQuote();
                     $this->messageManager->addErrorMessage($message);
                     return $this->redirectFactory->create()->setPath('checkout/cart');
                 }
                 return $this->page($order, 'failed', $message);
+
+            default:
+                // Waiting for payment, on hold, or anything an admin set meanwhile: no conclusions, no actions.
+                return $this->page($order, 'pending', '');
         }
     }
 
-    private function failureMessage(Order $order): \Magento\Framework\Phrase
+    private function failureMessage(Order $order, bool $basketRestored): \Magento\Framework\Phrase
     {
         foreach ($this->transactions->getForOrder((int)$order->getId(), 3) as $transaction) {
             if ($transaction->getStatus() === Transaction::STATUS_REVERSED) {
                 return __('The order had been cancelled before your payment arrived, so the payment has been given back to your card.');
             }
             if ($transaction->getStatus() === Transaction::STATUS_FAILED && $transaction->getData('error_code')) {
-                return __('Payment failed: %1 Your order was cancelled and your basket has been restored.', $this->errorMessages->forCode((string)$transaction->getData('error_code')));
+                $reason = $this->errorMessages->forCode((string)$transaction->getData('error_code'));
+                return $basketRestored
+                    ? __('Payment failed: %1 Your order was cancelled and your basket has been restored.', $reason)
+                    : __('Payment failed: %1 The order was cancelled.', $reason);
             }
         }
         return __('The payment was not completed, so the order was cancelled. You can try again or choose another payment method.');
@@ -114,11 +117,7 @@ class Result implements HttpGetActionInterface
      */
     private function canCheckNow(Order $order): bool
     {
-        foreach ($this->transactions->getForOrder((int)$order->getId(), 1) as $transaction) {
-            $checked = (string)$transaction->getData('checked_at');
-            return $checked === '' || strtotime($checked . ' UTC') < time() - 10;
-        }
-        return true;
+        return !$this->transactions->wasCheckedRecently((int)$order->getId(), 10);
     }
 
     private function page(Order $order, string $state, string $message): ResultInterface

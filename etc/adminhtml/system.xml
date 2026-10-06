@@ -27,18 +27,10 @@
                 <field id="api_key" translate="label" type="obscure" sortOrder="40" showInDefault="1" showInWebsite="1">
                     <label>API Key</label>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
-                    <validate>required-entry</validate>
-                    <depends>
-                        <field id="active">1</field>
-                    </depends>
                 </field>
                 <field id="secret_key" translate="label" type="obscure" sortOrder="50" showInDefault="1" showInWebsite="1">
                     <label>Secret Key</label>
                     <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
-                    <validate>required-entry</validate>
-                    <depends>
-                        <field id="active">1</field>
-                    </depends>
                 </field>
                 <field id="test_connection" translate="label" type="button" sortOrder="55" showInDefault="1" showInWebsite="1">
                     <label>Connection</label>

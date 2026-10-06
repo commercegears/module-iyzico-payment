@@ -12,7 +12,7 @@
 $viewModel = $block->getData('view_model');
 $state = $viewModel->getState();
 ?>
-<div class="mx-auto max-w-3xl my-6">
+<div class="max-w-3xl my-6">
     <p class="flex flex-wrap justify-between gap-2 mb-4 text-lg">
         <span><?= $escaper->escapeHtml(__('Order #%1', $viewModel->getIncrementId())) ?></span>
         <span class="font-semibold"><?= $escaper->escapeHtml(__('Amount to pay: %1', $viewModel->getAmount())) ?></span>

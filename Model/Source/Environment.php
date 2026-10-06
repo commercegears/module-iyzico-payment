@@ -16,7 +16,7 @@ class Environment implements OptionSourceInterface
     public function toOptionArray(): array
     {
         return [
-            ['value' => Config::ENV_SANDBOX, 'label' => __('Sandbox (test payments)')],
+            ['value' => Config::ENV_SANDBOX, 'label' => __('Sandbox')],
             ['value' => Config::ENV_LIVE, 'label' => __('Live')],
         ];
     }

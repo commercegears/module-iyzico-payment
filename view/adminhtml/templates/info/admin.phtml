@@ -32,7 +32,7 @@ $rows = [
 <div class="softaware-iyzico-info">
     <strong><?= $escaper->escapeHtml($block->getMethod()->getTitle()) ?></strong>
     <?php if ($block->isSandbox()): ?>
-        <span class="grid-severity-minor" style="margin-left:6px"><span><?= $escaper->escapeHtml(__('Sandbox')) ?></span></span>
+        <span class="grid-severity-minor" style="display:inline-block;width:auto;margin-left:8px;padding:0 8px;line-height:1.6"><span><?= $escaper->escapeHtml(__('Sandbox')) ?></span></span>
     <?php endif; ?>
     <?php if ($attention !== ''): ?>
         <div class="message message-warning" style="margin:10px 0"><?= $escaper->escapeHtml($attention) ?></div>

@@ -13,7 +13,7 @@ $viewModel = $block->getData('view_model');
 $state = $viewModel->getState();
 $order = $viewModel->getIncrementId();
 ?>
-<div class="mx-auto max-w-2xl my-8 space-y-4">
+<div class="max-w-2xl my-8 space-y-4">
     <?php if ($state === 'paid'): ?>
         <div class="message success"><span><?= $escaper->escapeHtml(__('Thank you. Your payment for order #%1 has been received.', $order)) ?></span></div>
         <p><?= $escaper->escapeHtml(__('You will receive an order confirmation by e-mail.')) ?></p>

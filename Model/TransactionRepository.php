@@ -65,6 +65,18 @@ class TransactionRepository
         return array_values($collection->getItems());
     }
 
+    /**
+     * True when iyzico was asked about this order within the last $seconds (limits checks that anyone can trigger,
+     * such as unsigned notifications or reloading a page).
+     */
+    public function wasCheckedRecently(int $orderId, int $seconds): bool
+    {
+        $collection = $this->collectionFactory->create()
+            ->addFieldToFilter('order_id', $orderId)
+            ->addFieldToFilter('checked_at', ['gt' => gmdate('Y-m-d H:i:s', time() - $seconds)]);
+        return $collection->getSize() > 0;
+    }
+
     public function countForOrder(int $orderId): int
     {
         return (int)$this->collectionFactory->create()->addFieldToFilter('order_id', $orderId)->getSize();

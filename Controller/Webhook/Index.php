@@ -76,8 +76,14 @@ class Index implements HttpPostActionInterface, CsrfAwareActionInterface
             return $this->answer(401, 'invalid signature');
         }
 
+        $isFraudNotification = isset($payload['fraudStatus']) && $token === '';
+        if ($header === '' && !$isFraudNotification && $this->transactions->wasCheckedRecently($orderId, 10)) {
+            // Unsigned and the order was just checked: nothing new to learn, and no way to flood iyzico.
+            // (Fraud notifications only reach iyzico for orders in payment review, see checkReview.)
+            return $this->answer(200, 'ok');
+        }
         try {
-            if (isset($payload['fraudStatus']) && $token === '') {
+            if ($isFraudNotification) {
                 $outcome = $this->statusService->checkReview($orderId, StatusChecker::SOURCE_WEBHOOK);
             } elseif ($transaction && $transaction->getToken() === $token) {
                 $outcome = $this->statusService->handleToken($transaction, StatusChecker::SOURCE_WEBHOOK, false);

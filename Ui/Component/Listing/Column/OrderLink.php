@@ -32,7 +32,10 @@ class OrderLink extends Column
 
     public function prepareDataSource(array $dataSource)
     {
-        foreach ($dataSource['data']['items'] ?? [] as &$item) {
+        if (!isset($dataSource['data']['items'])) {
+            return $dataSource;
+        }
+        foreach ($dataSource['data']['items'] as &$item) {
             $increment = (string)($item['increment_id'] ?? '');
             $orderId = (int)($item['order_id'] ?? 0);
             $item['increment_id_link'] = $orderId
@@ -40,6 +43,7 @@ class OrderLink extends Column
                     . $this->escaper->escapeHtml($increment) . '</a>'
                 : $this->escaper->escapeHtml($increment);
         }
+        unset($item);
         return $dataSource;
     }
 }

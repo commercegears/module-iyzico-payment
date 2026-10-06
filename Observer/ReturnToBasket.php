@@ -22,6 +22,7 @@ use Softaware\IyzicoPayment\Model\Log;
 use Softaware\IyzicoPayment\Model\OrderStatusService;
 use Softaware\IyzicoPayment\Model\ResultProcessor;
 use Softaware\IyzicoPayment\Model\StatusChecker;
+use Softaware\IyzicoPayment\Model\TransactionRepository;
 use Softaware\IyzicoPayment\Model\UrlProvider;
 
 /**
@@ -38,6 +39,7 @@ class ReturnToBasket implements ObserverInterface
     public function __construct(
         private readonly CheckoutSession $checkoutSession,
         private readonly OrderStatusService $statusService,
+        private readonly TransactionRepository $transactions,
         private readonly UrlProvider $urlProvider,
         private readonly ManagerInterface $messageManager,
         private readonly ActionFlag $actionFlag,
@@ -57,6 +59,9 @@ class ReturnToBasket implements ObserverInterface
             || $order->getPayment()?->getMethod() !== Config::METHOD_CODE
             || strtotime((string)$order->getCreatedAt() . ' UTC') < time() - self::MAX_AGE
         ) {
+            return;
+        }
+        if ($this->transactions->wasCheckedRecently((int)$order->getId(), 15)) {
             return;
         }
         try {
