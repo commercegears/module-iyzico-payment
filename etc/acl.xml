@@ -10,7 +10,7 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Softaware_Base::base">
+                <resource id="Softaware_Core::core">
                     <resource id="Softaware_IyzicoPayment::iyzico" title="iyzico" sortOrder="70">
                         <resource id="Softaware_IyzicoPayment::transactions" title="View iyzico Transactions" sortOrder="10"/>
                         <resource id="Softaware_IyzicoPayment::check_status" title="Check Payment Status at iyzico" sortOrder="20"/>

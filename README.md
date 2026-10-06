@@ -102,7 +102,7 @@ Only the API key and the secret key are required. Everything else has a sensible
 
 ## Requirements
 
-Magento Open Source / Adobe Commerce 2.4.7 - 2.4.9, PHP 8.2 - 8.5, `softaware/module-base`. Luma and Hyvä
+Magento Open Source / Adobe Commerce 2.4.7 - 2.4.9, PHP 8.2 - 8.5, `softaware/module-core`. Luma and Hyvä
 storefronts (the checkout itself is Luma or Hyvä's Luma checkout fallback). No iyzico SDK needed.
 
 ## Installation

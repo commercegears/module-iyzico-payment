@@ -13,7 +13,7 @@
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "ext-json": "*",
         "magento/framework": "~103.0.7",
-        "softaware/module-base": "^1.2",
+        "softaware/module-core": "^1.0",
         "magento/module-backend": "*",
         "magento/module-catalog": "*",
         "magento/module-checkout": "*",
