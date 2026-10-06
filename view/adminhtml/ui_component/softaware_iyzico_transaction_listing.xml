@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">softaware_iyzico_transaction_listing.softaware_iyzico_transaction_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>softaware_iyzico_transaction_listing_columns</spinner>
+        <deps>
+            <dep>softaware_iyzico_transaction_listing.softaware_iyzico_transaction_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="softaware_iyzico_transaction_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">entity_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Softaware_IyzicoPayment::transactions</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="softaware_iyzico_transaction_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <exportButton name="export_button" class="Softaware\IyzicoPayment\Ui\Component\CsvExportButton"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="softaware_iyzico_transaction_listing_columns">
+        <column name="entity_id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">ID</label>
+                <sorting>desc</sorting>
+            </settings>
+        </column>
+        <column name="created_at" sortOrder="20" class="Magento\Ui\Component\Listing\Columns\Date" component="Magento_Ui/js/grid/columns/date">
+            <settings>
+                <filter>dateRange</filter>
+                <dataType>date</dataType>
+                <label translate="true">Date</label>
+            </settings>
+        </column>
+        <column name="increment_id_link" class="Softaware\IyzicoPayment\Ui\Component\Listing\Column\OrderLink" sortOrder="30">
+            <settings>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <sortable>false</sortable>
+                <label translate="true">Order</label>
+            </settings>
+        </column>
+        <column name="increment_id" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Order Number</label>
+                <visible>false</visible>
+            </settings>
+        </column>
+        <column name="payment_id" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Payment ID</label>
+            </settings>
+        </column>
+        <column name="status" sortOrder="60" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <filter>select</filter>
+                <options class="Softaware\IyzicoPayment\Model\Source\TransactionStatus"/>
+                <dataType>select</dataType>
+                <label translate="true">Status</label>
+            </settings>
+        </column>
+        <column name="amount" sortOrder="70">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Order Amount</label>
+            </settings>
+        </column>
+        <column name="paid_amount" sortOrder="80">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Amount Charged</label>
+            </settings>
+        </column>
+        <column name="refunded_amount" sortOrder="90">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Refunded</label>
+            </settings>
+        </column>
+        <column name="currency" sortOrder="100">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Currency</label>
+            </settings>
+        </column>
+        <column name="installment" sortOrder="110">
+            <settings>
+                <filter>textRange</filter>
+                <label translate="true">Installments</label>
+            </settings>
+        </column>
+        <column name="fraud_status" sortOrder="120" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <filter>select</filter>
+                <options class="Softaware\IyzicoPayment\Model\Source\FraudStatus"/>
+                <dataType>select</dataType>
+                <label translate="true">Fraud Check</label>
+            </settings>
+        </column>
+        <column name="card_association" sortOrder="130">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Card</label>
+            </settings>
+        </column>
+        <column name="last_four" sortOrder="140">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Last Four</label>
+                <visible>false</visible>
+            </settings>
+        </column>
+        <column name="environment" sortOrder="150" component="Magento_Ui/js/grid/columns/select">
+            <settings>
+                <filter>select</filter>
+                <options class="Softaware\IyzicoPayment\Model\Source\Environment"/>
+                <dataType>select</dataType>
+                <label translate="true">Environment</label>
+            </settings>
+        </column>
+        <column name="error_code" sortOrder="160">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Error Code</label>
+            </settings>
+        </column>
+        <column name="error_message" sortOrder="170">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Error Message</label>
+                <visible>false</visible>
+            </settings>
+        </column>
+        <column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store" sortOrder="180">
+            <settings>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <sortable>false</sortable>
+                <label translate="true">Store View</label>
+                <visible>false</visible>
+            </settings>
+        </column>
+    </columns>
+</listing>

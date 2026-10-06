@@ -1,0 +1,63 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ *
+ * iyzico panel in the admin order, invoice and credit memo views.
+ */
+/** @var \Softaware\IyzicoPayment\Block\Info $block */
+/** @var \Magento\Framework\Escaper $escaper */
+use Softaware\IyzicoPayment\Model\PaymentInfo;
+
+$currency = $block->getCurrency();
+$paid = $block->getValue(PaymentInfo::PAID_PRICE);
+$price = $block->getValue(PaymentInfo::PRICE);
+$installment = (int)$block->getValue(PaymentInfo::INSTALLMENT);
+$attention = $block->getValue(PaymentInfo::ATTENTION);
+$rows = [
+    (string)__('Status') => $block->getStatusLabel(),
+    (string)__('Payment ID') => $block->getValue(PaymentInfo::PAYMENT_ID),
+    (string)__('Card') => $block->getCardText(),
+    (string)__('Card Type') => str_replace('_', ' ', $block->getValue(PaymentInfo::CARD_TYPE)),
+    (string)__('BIN') => $block->getValue(PaymentInfo::BIN),
+    (string)__('Installments') => $installment > 0 ? (string)$installment : '',
+    (string)__('Amount Charged') => $paid !== '' ? $paid . ' ' . $currency : '',
+    (string)__('Installment Charge') => ($paid !== '' && (float)$paid > (float)$price)
+        ? number_format((float)$paid - (float)$price, 2, '.', '') . ' ' . $currency : '',
+    (string)__('iyzico Fees') => ($block->getValue(PaymentInfo::IYZICO_FEE) !== '' && $paid !== '')
+        ? $block->getValue(PaymentInfo::IYZICO_FEE) . ' ' . $currency : '',
+];
+?>
+<div class="softaware-iyzico-info">
+    <strong><?= $escaper->escapeHtml($block->getMethod()->getTitle()) ?></strong>
+    <?php if ($block->isSandbox()): ?>
+        <span class="grid-severity-minor" style="margin-left:6px"><span><?= $escaper->escapeHtml(__('Sandbox')) ?></span></span>
+    <?php endif; ?>
+    <?php if ($attention !== ''): ?>
+        <div class="message message-warning" style="margin:10px 0"><?= $escaper->escapeHtml($attention) ?></div>
+    <?php endif; ?>
+    <table class="data-table admin__table-secondary" style="margin-top:8px">
+        <tbody>
+        <?php foreach ($rows as $label => $value): ?>
+            <?php if ($value === '') { continue; } ?>
+            <tr>
+                <th scope="row"><?= $escaper->escapeHtml($label) ?></th>
+                <td><?= $escaper->escapeHtml($value) ?></td>
+            </tr>
+        <?php endforeach; ?>
+        <?php foreach ($block->getList(PaymentInfo::REFUNDS) as $refund): ?>
+            <tr>
+                <th scope="row"><?= $escaper->escapeHtml(($refund['type'] ?? '') === 'cancel' ? __('Cancelled at iyzico') : __('Refunded at iyzico')) ?></th>
+                <td><?= $escaper->escapeHtml(($refund['amount'] ?? '') . ' ' . $currency . ' (' . ($refund['at'] ?? '') . ' UTC)') ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php if ($block->canCheckStatus()): ?>
+        <form method="post" action="<?= $escaper->escapeUrl($block->getCheckStatusUrl()) ?>" style="margin-top:10px">
+            <input type="hidden" name="form_key" value="<?= $escaper->escapeHtmlAttr($block->getFormKey()) ?>"/>
+            <button type="submit" class="action-secondary"><span><?= $escaper->escapeHtml(__('Check Status at iyzico')) ?></span></button>
+        </form>
+    <?php endif; ?>
+</div>

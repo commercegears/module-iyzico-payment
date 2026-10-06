@@ -1,0 +1,17 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+/** @var \Softaware\IyzicoPayment\Block\Adminhtml\System\TestConnection $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<button type="button" class="action-default" id="softaware-iyzico-test"
+        data-mage-init='<?= $escaper->escapeHtmlAttr(json_encode([
+            'Softaware_IyzicoPayment/js/test-connection' => ['url' => $block->getTestUrl(), 'result' => '#softaware-iyzico-test-result'],
+        ])) ?>'>
+    <span><?= $escaper->escapeHtml(__('Test Connection')) ?></span>
+</button>
+<span id="softaware-iyzico-test-result" style="margin-left:10px" role="status"></span>
+<p class="note"><span><?= $escaper->escapeHtml(__('Uses the saved keys of this scope. Save the configuration first after changing them.')) ?></span></p>

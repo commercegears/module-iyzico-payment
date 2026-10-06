@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="SoftawareIyzicoTransactionsCsv" type="Magento\Ui\Model\Export\ConvertToCsv">
+        <arguments>
+            <argument name="metadataProvider" xsi:type="object">Softaware\IyzicoPayment\Model\Export\SafeMetadataProvider</argument>
+        </arguments>
+    </virtualType>
+    <type name="Softaware\IyzicoPayment\Controller\Adminhtml\Transaction\ExportCsv">
+        <arguments>
+            <argument name="converter" xsi:type="object">SoftawareIyzicoTransactionsCsv</argument>
+        </arguments>
+    </type>
+</config>
