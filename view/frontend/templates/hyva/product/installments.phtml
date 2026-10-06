@@ -1,0 +1,32 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ *
+ * Product page "Installment options" (Hyvä). Filled after the page has loaded.
+ */
+/** @var \Softaware\IyzicoPayment\Block\InstallmentTable $block */
+/** @var \Magento\Framework\Escaper $escaper */
+if (!$block->isShown()) {
+    return;
+}
+$classes = [
+    'table' => 'w-full text-sm border-collapse mt-2',
+    'th' => 'border border-gray-200 px-2 py-1 text-right first:text-left font-semibold bg-gray-50 whitespace-nowrap',
+    'td' => 'border border-gray-200 px-2 py-1 text-right first:text-left whitespace-nowrap',
+    'small' => 'block text-xs text-gray-500',
+];
+?>
+<div class="my-4" hidden
+     data-iyzico-installments
+     data-url="<?= $escaper->escapeUrl($block->getEndpointUrl()) ?>"
+     data-classes="<?= $escaper->escapeHtmlAttr(json_encode($classes)) ?>"
+     data-labels="<?= $escaper->escapeHtmlAttr(json_encode(['card' => __('Card'), 'count' => __('%1 inst.'), 'total' => __('Total')])) ?>">
+    <details class="border border-gray-200 rounded p-3">
+        <summary class="cursor-pointer font-semibold"><?= $escaper->escapeHtml(__('Installment Options')) ?></summary>
+        <div class="overflow-x-auto" data-role="table"></div>
+        <p class="mt-2 text-xs text-gray-500"><?= $escaper->escapeHtml(__('Monthly amount and total for credit cards. Your bank may offer different terms; the final options are shown on the payment page.')) ?></p>
+    </details>
+</div>
+<script src="<?= $escaper->escapeUrl($block->getScriptUrl()) ?>" defer></script>

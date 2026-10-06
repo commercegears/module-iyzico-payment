@@ -1,0 +1,26 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ *
+ * Product page "Installment options" (Luma). Filled after the page has loaded.
+ */
+/** @var \Softaware\IyzicoPayment\Block\InstallmentTable $block */
+/** @var \Magento\Framework\Escaper $escaper */
+if (!$block->isShown()) {
+    return;
+}
+$classes = ['table' => 'softaware-iyzico-installments-table', 'th' => '', 'td' => '', 'small' => 'softaware-iyzico-installments-total'];
+?>
+<div class="softaware-iyzico-installments" hidden
+     data-url="<?= $escaper->escapeUrl($block->getEndpointUrl()) ?>"
+     data-classes="<?= $escaper->escapeHtmlAttr(json_encode($classes)) ?>"
+     data-labels="<?= $escaper->escapeHtmlAttr(json_encode(['card' => __('Card'), 'count' => __('%1 inst.'), 'total' => __('Total')])) ?>">
+    <details>
+        <summary><?= $escaper->escapeHtml(__('Installment Options')) ?></summary>
+        <div class="softaware-iyzico-installments-scroll" data-role="table"></div>
+        <p class="softaware-iyzico-installments-note"><?= $escaper->escapeHtml(__('Monthly amount and total for credit cards. Your bank may offer different terms; the final options are shown on the payment page.')) ?></p>
+    </details>
+</div>
+<script src="<?= $escaper->escapeUrl($block->getScriptUrl()) ?>" defer></script>
