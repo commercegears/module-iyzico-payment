@@ -1,0 +1,44 @@
+{
+    "softaware_iyzico_transaction": {
+        "column": {
+            "entity_id": true,
+            "order_id": true,
+            "increment_id": true,
+            "store_id": true,
+            "environment": true,
+            "token": true,
+            "payment_page_url": true,
+            "token_expires_at": true,
+            "in_frame": true,
+            "status": true,
+            "payment_id": true,
+            "amount": true,
+            "paid_amount": true,
+            "refunded_amount": true,
+            "currency": true,
+            "installment": true,
+            "fraud_status": true,
+            "card_association": true,
+            "card_family": true,
+            "card_type": true,
+            "bin_number": true,
+            "last_four": true,
+            "error_code": true,
+            "error_message": true,
+            "checked_at": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "SOFTAWARE_IYZICO_TRANSACTION_PAYMENT_ID": true,
+            "SOFTAWARE_IYZICO_TRANSACTION_INCREMENT_ID": true,
+            "SOFTAWARE_IYZICO_TRANSACTION_STATUS": true,
+            "SOFTAWARE_IYZICO_TRANSACTION_CREATED_AT": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "SOFTAWARE_IYZICO_TRANSACTION_TOKEN": true,
+            "SOFTAWARE_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID": true
+        }
+    }
+}

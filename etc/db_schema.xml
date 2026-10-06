@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="softaware_iyzico_transaction" resource="sales" engine="innodb" comment="iyzico Checkout Form payments, one row per payment form opened">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="ID"/>
+        <column xsi:type="int" name="order_id" unsigned="true" nullable="false" comment="Order ID"/>
+        <column xsi:type="varchar" name="increment_id" length="50" nullable="false" comment="Order Number"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="true" comment="Store ID"/>
+        <column xsi:type="varchar" name="environment" length="10" nullable="false" default="sandbox" comment="sandbox or live"/>
+        <column xsi:type="varchar" name="token" length="100" nullable="false" comment="Checkout Form Token"/>
+        <column xsi:type="varchar" name="payment_page_url" length="500" nullable="true" comment="iyzico Payment Page URL"/>
+        <column xsi:type="datetime" name="token_expires_at" nullable="true" comment="Token Expires At (UTC)"/>
+        <column xsi:type="boolean" name="in_frame" nullable="false" default="false" comment="Shown in a frame on the store page"/>
+        <column xsi:type="varchar" name="status" length="20" nullable="false" default="started" comment="started, paid, review, failed, rejected, reversed, mismatch"/>
+        <column xsi:type="varchar" name="payment_id" length="40" nullable="true" comment="iyzico Payment ID"/>
+        <column xsi:type="decimal" name="amount" scale="2" precision="20" nullable="false" default="0" comment="Order Amount Sent (price)"/>
+        <column xsi:type="decimal" name="paid_amount" scale="2" precision="20" nullable="true" comment="Amount Charged (paidPrice)"/>
+        <column xsi:type="decimal" name="refunded_amount" scale="2" precision="20" nullable="false" default="0" comment="Amount Refunded"/>
+        <column xsi:type="varchar" name="currency" length="3" nullable="false" comment="Currency"/>
+        <column xsi:type="smallint" name="installment" unsigned="true" nullable="true" comment="Installments"/>
+        <column xsi:type="smallint" name="fraud_status" nullable="true" comment="iyzico fraudStatus"/>
+        <column xsi:type="varchar" name="card_association" length="40" nullable="true" comment="Card Association"/>
+        <column xsi:type="varchar" name="card_family" length="60" nullable="true" comment="Card Family"/>
+        <column xsi:type="varchar" name="card_type" length="40" nullable="true" comment="Card Type"/>
+        <column xsi:type="varchar" name="bin_number" length="8" nullable="true" comment="Card BIN"/>
+        <column xsi:type="varchar" name="last_four" length="4" nullable="true" comment="Card Last Four Digits"/>
+        <column xsi:type="varchar" name="error_code" length="40" nullable="true" comment="iyzico Error Code"/>
+        <column xsi:type="varchar" name="error_message" length="255" nullable="true" comment="iyzico Error Message"/>
+        <column xsi:type="timestamp" name="checked_at" nullable="true" comment="Last Checked with iyzico"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP" comment="Created At"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" default="CURRENT_TIMESTAMP" on_update="true" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="SOFTAWARE_IYZICO_TRANSACTION_TOKEN">
+            <column name="token"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="SOFTAWARE_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID"
+                    table="softaware_iyzico_transaction" column="order_id" referenceTable="sales_order"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_PAYMENT_ID" indexType="btree">
+            <column name="payment_id"/>
+        </index>
+        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_INCREMENT_ID" indexType="btree">
+            <column name="increment_id"/>
+        </index>
+        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_STATUS" indexType="btree">
+            <column name="status"/>
+        </index>
+        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_CREATED_AT" indexType="btree">
+            <column name="created_at"/>
+        </index>
+    </table>
+</schema>
