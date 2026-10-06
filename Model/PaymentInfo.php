@@ -35,6 +35,8 @@ class PaymentInfo
     public const REFUNDS = 'iyzico_refunds';
     /** Text shown in the admin panel when something needs the merchant's attention. */
     public const ATTENTION = 'iyzico_attention';
+    /** Where the identity number came from: mapped / not_mapped / empty (see Request\IdentityNumber). */
+    public const IDENTITY_SOURCE = 'iyzico_identity_source';
 
     /** Payment flag (not saved): our own code cancels the order, no need to ask iyzico again. */
     public const FLAG_SKIP_CANCEL_CHECK = 'iyzico_skip_cancel_check';

@@ -154,4 +154,19 @@ class Info extends BaseInfo
         $this->setTemplate('Magento_Payment::info/pdf/default.phtml');
         return $this->toHtml();
     }
+
+    /**
+     * Where the identity number sent to iyzico came from; the number itself is never shown.
+     */
+    public function getIdentityText(): string
+    {
+        return match ($this->getValue(PaymentInfo::IDENTITY_SOURCE)) {
+            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_MAPPED => (string)__('From the mapped attribute'),
+            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_EMPTY
+                => (string)__('Default number sent (the mapped attribute was empty or not a valid T.C. Kimlik No)'),
+            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_NOT_MAPPED
+                => (string)__('Default number sent (no T.C. Kimlik No attribute is mapped)'),
+            default => '',
+        };
+    }
 }

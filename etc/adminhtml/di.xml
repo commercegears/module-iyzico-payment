@@ -17,4 +17,11 @@
             <argument name="converter" xsi:type="object">SoftawareIyzicoTransactionsCsv</argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\Notification\MessageList">
+        <arguments>
+            <argument name="messages" xsi:type="array">
+                <item name="softaware_iyzico_identity_not_mapped" xsi:type="string">Softaware\IyzicoPayment\Model\System\IdentityNotMappedMessage</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

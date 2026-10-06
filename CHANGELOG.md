@@ -10,6 +10,9 @@ All notable changes to `softaware/module-iyzico-payment` are documented here.
 - Results fetched from iyzico's API and verified (status, basket ID, conversation ID, currency, amount, amount
   charged, HMAC-SHA256 response signature) before the payment is captured on an invoice; card, installments, fees
   and per-item payment transaction IDs stored; order e-mail sent after payment.
+- T.C. Kimlik No attribute mapping (customer or address text attribute). When nothing is mapped, or the value is
+  not a valid T.C. Kimlik No, the default identity number (11111111111) is sent; an admin system message, the
+  setting's comment and the order's iyzico panel say so.
 - Declines and abandoned payments: order cancelled, basket restored, friendly translated messages for iyzico error
   codes.
 - Fraud review: Payment Review with an open invoice, approved or cancelled automatically (cron, fraud notification,

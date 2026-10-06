@@ -130,6 +130,20 @@ class Config
         return $minutes > 0 ? max(35, min($minutes, 10080)) : 60;
     }
 
+    /**
+     * The attribute mapped to the T.C. Kimlik No, as [type, code] ("customer"/"address"), or null when not mapped.
+     *
+     * @return array{0: string, 1: string}|null
+     */
+    public function getIdentityAttribute(?int $storeId = null): ?array
+    {
+        $value = $this->getValue('identity_attribute', $storeId);
+        if (!preg_match('/^(customer|address):([a-z][a-z0-9_]{0,59})$/', $value, $m)) {
+            return null;
+        }
+        return [$m[1], $m[2]];
+    }
+
     public function getDefaultIdentityNumber(?int $storeId = null): string
     {
         $value = preg_replace('/\D/', '', $this->getValue('default_identity_number', $storeId));

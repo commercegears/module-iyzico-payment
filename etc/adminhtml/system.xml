@@ -98,11 +98,17 @@
                         <config_path>payment/softaware_iyzico/pending_timeout</config_path>
                         <comment>Orders still waiting for payment are checked with iyzico after this time and cancelled only if iyzico has no payment for them. 35 to 10080.</comment>
                     </field>
+                    <field id="identity_attribute" translate="label comment" type="select" sortOrder="28" showInDefault="1" showInWebsite="1">
+                        <label>T.C. Kimlik No Attribute</label>
+                        <source_model>Softaware\IyzicoPayment\Model\Source\IdentityAttribute</source_model>
+                        <config_path>payment/softaware_iyzico/identity_attribute</config_path>
+                        <comment><![CDATA[iyzico requires the buyer's identity number. Choose the customer or address attribute that holds the T.C. Kimlik No (for example Tax/VAT Number). <strong>While nothing is mapped, every order is sent with the default number below (11111111111).</strong> The default is also sent when the mapped value is empty or not a valid T.C. Kimlik No.]]></comment>
+                    </field>
                     <field id="default_identity_number" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" canRestore="1">
                         <label>Identity Number When None Is Given</label>
                         <validate>required-entry validate-digits validate-length minimum-length-5 maximum-length-50</validate>
                         <config_path>payment/softaware_iyzico/default_identity_number</config_path>
-                        <comment>iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.</comment>
+                        <comment>Sent when no attribute is mapped above, or the mapped value is empty or not a valid T.C. Kimlik No.</comment>
                     </field>
                     <field id="debug" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" canRestore="1">
                         <label>Debug Log</label>

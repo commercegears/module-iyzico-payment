@@ -15,6 +15,7 @@ use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Sales\Api\Data\OrderAddressInterface;
 use Magento\Sales\Model\Order;
 use Softaware\IyzicoPayment\Model\Config;
+use Softaware\IyzicoPayment\Model\PaymentInfo;
 
 /**
  * Checkout Form initialize request for an order (docs: CF-Initialize).
@@ -70,6 +71,8 @@ class CheckoutFormRequest
     private function buyer(Order $order, ?OrderAddressInterface $billing): array
     {
         $customerId = (int)$order->getCustomerId();
+        $identity = $this->identityNumber->resolveWithSource($order);
+        $order->getPayment()?->setAdditionalInformation(PaymentInfo::IDENTITY_SOURCE, $identity['source']);
         $firstname = (string)($billing?->getFirstname() ?: $order->getCustomerFirstname());
         $lastname = (string)($billing?->getLastname() ?: $order->getCustomerLastname());
         $buyer = [
@@ -78,7 +81,7 @@ class CheckoutFormRequest
                 : 'guest-' . $order->getIncrementId(),
             'name' => $this->text($firstname, 50, '-'),
             'surname' => $this->text($lastname, 50, '-'),
-            'identityNumber' => $this->identityNumber->resolve($order),
+            'identityNumber' => $identity['value'],
             'email' => mb_substr(trim((string)$order->getCustomerEmail()), 0, 100),
             'gsmNumber' => $this->phone($order),
             'registrationAddress' => $this->street($billing),

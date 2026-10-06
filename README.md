@@ -149,11 +149,20 @@ Magento cron must run (the lost-payment and fraud-review checks are cron jobs).
 | Sort order | `payment/softaware_iyzico/sort_order` | 10 | website |
 | Order status during fraud review | `payment/softaware_iyzico/review_status` | payment_review | website |
 | Cancel unpaid orders after (minutes) | `payment/softaware_iyzico/pending_timeout` | 60 (35 - 10080) | website |
+| T.C. Kimlik No attribute | `payment/softaware_iyzico/identity_attribute` (`customer:<code>` or `address:<code>`) | not mapped | website |
 | Identity number when none is given | `payment/softaware_iyzico/default_identity_number` | 11111111111 | website |
 | Debug log | `payment/softaware_iyzico/debug` | 0 | website |
 
-The identity number sent to iyzico is a valid T.C. Kimlik No from the customer's tax/VAT number (or the address VAT
-field) when there is one, otherwise the default above (iyzico requires one).
+iyzico requires the buyer's identity number. Map the attribute that holds the T.C. Kimlik No in "T.C. Kimlik No
+Attribute": any text attribute of the customer (for example Tax/VAT Number, `customer:taxvat`, which guests can also
+enter at checkout when the field is shown) or of the address (for example VAT Number, `address:vat_id`; billing
+address first, then shipping). Only a valid T.C. Kimlik No (11 digits with checksum) is sent.
+
+**While nothing is mapped, every order is sent with the default number (11111111111).** The admin is told in three
+places: the setting's own comment, a system message on every admin page while iyzico is on for a website without a
+mapping (shown to users with the "iyzico Settings" permission), and the "Identity Number" row of the iyzico panel on
+each order ("From the mapped attribute", or "Default number sent" with the reason). The number itself is never shown
+or logged.
 
 ## Testing in the sandbox
 

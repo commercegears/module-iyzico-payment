@@ -27,6 +27,7 @@ $rows = [
         ? number_format((float)$paid - (float)$price, 2, '.', '') . ' ' . $currency : '',
     (string)__('iyzico Fees') => ($block->getValue(PaymentInfo::IYZICO_FEE) !== '' && $paid !== '')
         ? $block->getValue(PaymentInfo::IYZICO_FEE) . ' ' . $currency : '',
+    (string)__('Identity Number') => $block->getIdentityText(),
 ];
 ?>
 <div class="softaware-iyzico-info">
