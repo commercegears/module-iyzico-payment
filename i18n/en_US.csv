@@ -1,0 +1,194 @@
+Register this URL in the iyzico merchant panel under Settings > Merchant Settings > Merchant Notifications. Ask iyzico (entegrasyon@iyzico.com) to switch on signed notifications (X-IYZ-SIGNATURE-V3). Notifications only make the store ask iyzico again; nothing in them is trusted.,Register this URL in the iyzico merchant panel under Settings > Merchant Settings > Merchant Notifications. Ask iyzico (entegrasyon@iyzico.com) to switch on signed notifications (X-IYZ-SIGNATURE-V3). Notifications only make the store ask iyzico again; nothing in them is trusted.
+Card,Card
+Installments,Installments
+iyzico Payment ID,iyzico Payment ID
+"Paid, held for iyzico's fraud review","Paid, held for iyzico's fraud review"
+Rejected by iyzico's fraud review,Rejected by iyzico's fraud review
+"Paid, refunds made","Paid, refunds made"
+Paid,Paid
+Waiting for payment,Waiting for payment
+Not paid,Not paid
+This order no longer exists.,This order no longer exists.
+This order was not paid with iyzico.,This order was not paid with iyzico.
+iyzico confirmed the payment. The order has been invoiced.,iyzico confirmed the payment. The order has been invoiced.
+iyzico is still reviewing this payment. The order is updated automatically when iyzico decides.,iyzico is still reviewing this payment. The order is updated automatically when iyzico decides.
+The payment is still under way at iyzico (for example a bank transfer). Please check again later.,The payment is still under way at iyzico (for example a bank transfer). Please check again later.
+"iyzico has no successful payment for this order. If the customer will not pay, you can cancel it.","iyzico has no successful payment for this order. If the customer will not pay, you can cancel it."
+iyzico has a payment for this order although it was already paid or cancelled. See the order comments.,iyzico has a payment for this order although it was already paid or cancelled. See the order comments.
+iyzico reports a payment that does not match this order. See the order comments and the iyzico merchant panel.,iyzico reports a payment that does not match this order. See the order comments and the iyzico merchant panel.
+The order is up to date with iyzico.,The order is up to date with iyzico.
+iyzico did not give a clear answer. Please try again in a moment.,iyzico did not give a clear answer. Please try again in a moment.
+live,live
+sandbox,sandbox
+No API key and secret key are saved for this scope.,No API key and secret key are saved for this scope.
+iyzico could not be reached: %1,iyzico could not be reached: %1
+Connected to iyzico (%1). The keys are valid.,Connected to iyzico (%1). The keys are valid.
+iyzico (%1) refused the keys: %2 %3,iyzico (%1) refused the keys: %2 %3
+Page not found.,Page not found.
+iyzico Transactions,iyzico Transactions
+Payment,Payment
+Continue,Continue
+"The payment was cancelled. Your basket has been restored, so you can try again or choose another payment method.","The payment was cancelled. Your basket has been restored, so you can try again or choose another payment method."
+We could not confirm the payment status with iyzico. Please try again in a moment.,We could not confirm the payment status with iyzico. Please try again in a moment.
+"The order had been cancelled before your payment arrived, so the payment has been given back to your card.","The order had been cancelled before your payment arrived, so the payment has been given back to your card."
+Payment failed: %1 Your order was cancelled and your basket has been restored.,Payment failed: %1 Your order was cancelled and your basket has been restored.
+"The payment was not completed, so the order was cancelled. You can try again or choose another payment method.","The payment was not completed, so the order was cancelled. You can try again or choose another payment method."
+There is no order waiting for payment.,There is no order waiting for payment.
+iyzico did not open the payment form (%1 %2). The order was cancelled.,iyzico did not open the payment form (%1 %2). The order was cancelled.
+Secure Payment,Secure Payment
+This order has no iyzico payment details. Refund it in the iyzico merchant panel and create an offline credit memo.,This order has no iyzico payment details. Refund it in the iyzico merchant panel and create an offline credit memo.
+The refund amount must be greater than zero.,The refund amount must be greater than zero.
+iyzico can refund at most %1 %2 for this order.,iyzico can refund at most %1 %2 for this order.
+Everything paid with iyzico for this order has already been refunded.,Everything paid with iyzico for this order has already been refunded.
+iyzico %1: %2 %3 given back to the customer.,iyzico %1: %2 %3 given back to the customer.
+not enough refundable amount left on the payment,not enough refundable amount left on the payment
+"iyzico refunded %1 %2 and then stopped with: %3. The credit memo was not saved. Record the %1 %2 with an offline credit memo, then refund the rest.","iyzico refunded %1 %2 and then stopped with: %3. The credit memo was not saved. Record the %1 %2 with an offline credit memo, then refund the rest."
+iyzico did not accept the refund: %1,iyzico did not accept the refund: %1
+iyzico could not be reached. Nothing was refunded; please try again.,iyzico could not be reached. Nothing was refunded; please try again.
+Your card does not have enough limit or balance for this payment. Please use another card.,Your card does not have enough limit or balance for this payment. Please use another card.
+The card has expired or the expiry date was entered incorrectly.,The card has expired or the expiry date was entered incorrectly.
+The security code (CVC) was not accepted. Please check it and try again.,The security code (CVC) was not accepted. Please check it and try again.
+This card cannot be used for this payment. Please contact your bank or use another card.,This card cannot be used for this payment. Please contact your bank or use another card.
+Installments are not available for this card. Please pay in a single payment or use another card.,Installments are not available for this card. Please pay in a single payment or use another card.
+Cards issued outside Türkiye cannot be used for this payment.,Cards issued outside Türkiye cannot be used for this payment.
+The 3-D Secure verification was not completed. Please try again.,The 3-D Secure verification was not completed. Please try again.
+The payment was cancelled.,The payment was cancelled.
+Your bank did not respond in time. Please try again in a few minutes.,Your bank did not respond in time. Please try again in a few minutes.
+The payment could not be completed. Please contact us or choose another payment method.,The payment could not be completed. Please contact us or choose another payment method.
+Your bank did not approve the payment. Please try again or choose another payment method.,Your bank did not approve the payment. Please try again or choose another payment method.
+The order is being updated. Please try again in a moment.,The order is being updated. Please try again in a moment.
+The order no longer exists.,The order no longer exists.
+This order has had too many payment attempts. Please place a new order or contact us.,This order has had too many payment attempts. Please place a new order or contact us.
+iyzico does not accept payments in %1.,iyzico does not accept payments in %1.
+"iyzico could not start the payment. Please check your address and phone number, or choose another payment method.","iyzico could not start the payment. Please check your address and phone number, or choose another payment method."
+No order waiting for an iyzico payment was found.,No order waiting for an iyzico payment was found.
+The iyzico payment was not completed (%1). The order was cancelled.,The iyzico payment was not completed (%1). The order was cancelled.
+iyzico payment %1 was not registered: %2,iyzico payment %1 was not registered: %2
+"iyzico reports payment %1 for this order, but it was not registered: %2 Please check it in the iyzico merchant panel.","iyzico reports payment %1 for this order, but it was not registered: %2 Please check it in the iyzico merchant panel."
+the order had already been paid with another payment.,the order had already been paid with another payment.
+the order had been cancelled before the payment arrived.,the order had been cancelled before the payment arrived.
+iyzico's fraud check rejected payment %1; iyzico gives the money back to the customer. The order was cancelled.,iyzico's fraud check rejected payment %1; iyzico gives the money back to the customer. The order was cancelled.
+"the order is in state ""%1"".","the order is in state ""%1""."
+iyzico payment %1 arrived but was not registered: %2 Please check the order.,iyzico payment %1 arrived but was not registered: %2 Please check the order.
+"the basket ID is ""%1"", not the order number.","the basket ID is ""%1"", not the order number."
+the conversation ID does not match the order number.,the conversation ID does not match the order number.
+"the currency is %1, the order is in %2.","the currency is %1, the order is in %2."
+"the amount is %1, the order total is %2.","the amount is %1, the order total is %2."
+the amount charged (%1) is less than the order total.,the amount charged (%1) is less than the order total.
+the response signature is not valid.,the response signature is not valid.
+iyzico is reviewing payment %1 (fraud check). Do not ship until iyzico approves it; the order is updated automatically.,iyzico is reviewing payment %1 (fraud check). Do not ship until iyzico approves it; the order is updated automatically.
+The customer paid %1 %2 in %3 installments. The installment charge of %4 %2 is on top of the order total and is not part of the Magento totals; refunds give it back in proportion.,The customer paid %1 %2 in %3 installments. The installment charge of %4 %2 is on top of the order total and is not part of the Magento totals; refunds give it back in proportion.
+Paid in %1 installments.,Paid in %1 installments.
+iyzico payment %1 (%2 %3) was given back automatically: %4,iyzico payment %1 (%2 %3) was given back automatically: %4
+iyzico payment %1 (%2 %3) needs your attention: %4 It could not be given back automatically (%5). Please refund it in the iyzico merchant panel.,iyzico payment %1 (%2 %3) needs your attention: %4 It could not be given back automatically (%5). Please refund it in the iyzico merchant panel.
+Redirect to iyzico's payment page,Redirect to iyzico's payment page
+On this store's page,On this store's page
+Sandbox (test payments),Sandbox (test payments)
+Live,Live
+Approved,Approved
+In review,In review
+Rejected,Rejected
+Single payment,Single payment
+%1 installments,%1 installments
+"Store view language (Turkish for Turkish store views, otherwise English)","Store view language (Turkish for Turkish store views, otherwise English)"
+Turkish,Turkish
+English,English
+Form opened,Form opened
+Fraud review,Fraud review
+Failed,Failed
+Rejected by fraud review,Rejected by fraud review
+Given back (duplicate or late),Given back (duplicate or late)
+Needs attention,Needs attention
+"The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.","The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled."
+iyzico has no payment for this order. The unpaid order was cancelled.,iyzico has no payment for this order. The unpaid order was cancelled.
+iyzico approved payment %1 after its review. The order can be shipped.,iyzico approved payment %1 after its review. The order can be shipped.
+iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.,iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.
+"iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it.","iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it."
+"Your iyzico payment was not completed, so the order was cancelled. Your basket has been restored: you can pay again or choose another payment method.","Your iyzico payment was not completed, so the order was cancelled. Your basket has been restored: you can pay again or choose another payment method."
+CSV,CSV
+Status,Status
+Payment ID,Payment ID
+Card Type,Card Type
+BIN,BIN
+Amount Charged,Amount Charged
+Installment Charge,Installment Charge
+iyzico Fees,iyzico Fees
+Sandbox,Sandbox
+Cancelled at iyzico,Cancelled at iyzico
+Refunded at iyzico,Refunded at iyzico
+Check Status at iyzico,Check Status at iyzico
+Test Connection,Test Connection
+Uses the saved keys of this scope. Save the configuration first after changing them.,Uses the saved keys of this scope. Save the configuration first after changing them.
+Thank you. Your payment for order #%1 has been received.,Thank you. Your payment for order #%1 has been received.
+You will receive an order confirmation by e-mail.,You will receive an order confirmation by e-mail.
+Thank you. Your payment for order #%1 has been received and is being checked by iyzico.,Thank you. Your payment for order #%1 has been received and is being checked by iyzico.
+This usually takes a short while. We will e-mail you as soon as your order is confirmed.,This usually takes a short while. We will e-mail you as soon as your order is confirmed.
+We are waiting for iyzico to confirm the payment for order #%1.,We are waiting for iyzico to confirm the payment for order #%1.
+"Please do not pay again. If you chose bank transfer, the order is confirmed when the transfer arrives.","Please do not pay again. If you chose bank transfer, the order is confirmed when the transfer arrives."
+Check Again,Check Again
+Go to the Basket,Go to the Basket
+Continue Shopping,Continue Shopping
+Order #%1,Order #%1
+Amount to pay: %1,Amount to pay: %1
+iyzico secure payment form,iyzico secure payment form
+Your card details are entered on iyzico's secure form and never reach this store.,Your card details are entered on iyzico's secure form and never reach this store.
+iyzico cannot be reached at the moment. Your order is saved and nothing has been charged. Please try again in a moment.,iyzico cannot be reached at the moment. Your order is saved and nothing has been charged. Please try again in a moment.
+Try Again,Try Again
+Cancel Payment and Return to Basket,Cancel Payment and Return to Basket
+"iyzico ile Öde, Mastercard, Visa, American Express, Troy","iyzico ile Öde, Mastercard, Visa, American Express, Troy"
+%1 inst.,%1 inst.
+Total,Total
+Installment Options,Installment Options
+Monthly amount and total for credit cards. Your bank may offer different terms; the final options are shown on the payment page.,Monthly amount and total for credit cards. Your bank may offer different terms; the final options are shown on the payment page.
+After you place the order you will pay securely on iyzico's payment form. Installment options are shown there for eligible cards.,After you place the order you will pay securely on iyzico's payment form. Installment options are shown there for eligible cards.
+Test mode: no real payment is taken.,Test mode: no real payment is taken.
+Continue to Payment,Continue to Payment
+iyzico,iyzico
+Configuration,Configuration
+iyzico (Softaware),iyzico (Softaware)
+Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.,Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.
+Enabled,Enabled
+Title,Title
+Environment,Environment
+"Sandbox keys start with ""sandbox-"". Live and sandbox keys are different.","Sandbox keys start with ""sandbox-"". Live and sandbox keys are different."
+API Key,API Key
+Secret Key,Secret Key
+Connection,Connection
+Merchant Notification URL,Merchant Notification URL
+Payment Page,Payment Page
+"Both show iyzico's own form. ""On this store's page"" keeps your header and footer around it.","Both show iyzico's own form. ""On this store's page"" keeps your header and footer around it."
+Leave all unselected to offer what is set up in your iyzico panel. Rates are managed in the iyzico panel.,Leave all unselected to offer what is set up in your iyzico panel. Rates are managed in the iyzico panel.
+Payment Page Language,Payment Page Language
+Show Installment Options on Product Pages,Show Installment Options on Product Pages
+"Loads after the page (cached), so it does not slow the product page down.","Loads after the page (cached), so it does not slow the product page down."
+Payment from Applicable Countries,Payment from Applicable Countries
+Payment from Specific Countries,Payment from Specific Countries
+Minimum Order Total,Minimum Order Total
+Maximum Order Total,Maximum Order Total
+Sort Order,Sort Order
+Advanced,Advanced
+Order Status While iyzico Reviews a Payment,Order Status While iyzico Reviews a Payment
+Used when iyzico's fraud check holds a payment for review. Do not ship until iyzico approves it.,Used when iyzico's fraud check holds a payment for review. Do not ship until iyzico approves it.
+Cancel Unpaid Orders After (Minutes),Cancel Unpaid Orders After (Minutes)
+Orders still waiting for payment are checked with iyzico after this time and cancelled only if iyzico has no payment for them. 35 to 10080.,Orders still waiting for payment are checked with iyzico after this time and cancelled only if iyzico has no payment for them. 35 to 10080.
+Identity Number When None Is Given,Identity Number When None Is Given
+iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.,iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.
+Debug Log,Debug Log
+"Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged."
+ID,ID
+Date,Date
+Order,Order
+Order Number,Order Number
+Order Amount,Order Amount
+Refunded,Refunded
+Currency,Currency
+Fraud Check,Fraud Check
+Last Four,Last Four
+Error Code,Error Code
+Error Message,Error Message
+Store View,Store View
+View iyzico Transactions,View iyzico Transactions
+Check Payment Status at iyzico,Check Payment Status at iyzico
+iyzico Settings and Connection Test,iyzico Settings and Connection Test
+cancelled the payment,cancelled the payment
+refund,refund

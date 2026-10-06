@@ -1,0 +1,194 @@
+Register this URL in the iyzico merchant panel under Settings > Merchant Settings > Merchant Notifications. Ask iyzico (entegrasyon@iyzico.com) to switch on signed notifications (X-IYZ-SIGNATURE-V3). Notifications only make the store ask iyzico again; nothing in them is trusted.,Bu adresi iyzico üye işyeri panelinde Ayarlar > Firma Ayarları > Üye İşyeri Bildirimleri bölümüne girin. İmzalı bildirimleri (X-IYZ-SIGNATURE-V3) açtırmak için iyzico'ya (entegrasyon@iyzico.com) yazın. Bildirimler yalnızca mağazanın iyzico'ya yeniden sormasını sağlar; içeriklerine güvenilmez.
+Card,Kart
+Installments,Taksit
+iyzico Payment ID,iyzico Ödeme No
+"Paid, held for iyzico's fraud review","Ödendi, iyzico güvenlik incelemesinde"
+Rejected by iyzico's fraud review,iyzico güvenlik incelemesinde reddedildi
+"Paid, refunds made","Ödendi, iade yapıldı"
+Paid,Ödendi
+Waiting for payment,Ödeme bekleniyor
+Not paid,Ödenmedi
+This order no longer exists.,Bu sipariş artık mevcut değil.
+This order was not paid with iyzico.,Bu sipariş iyzico ile ödenmedi.
+iyzico confirmed the payment. The order has been invoiced.,iyzico ödemeyi onayladı. Siparişin faturası oluşturuldu.
+iyzico is still reviewing this payment. The order is updated automatically when iyzico decides.,iyzico bu ödemeyi hâlâ inceliyor. iyzico karar verdiğinde sipariş otomatik olarak güncellenir.
+The payment is still under way at iyzico (for example a bank transfer). Please check again later.,Ödeme iyzico'da hâlâ devam ediyor (örneğin havale/EFT). Lütfen daha sonra yeniden kontrol edin.
+"iyzico has no successful payment for this order. If the customer will not pay, you can cancel it.",iyzico'da bu sipariş için başarılı bir ödeme yok. Müşteri ödemeyecekse siparişi iptal edebilirsiniz.
+iyzico has a payment for this order although it was already paid or cancelled. See the order comments.,Sipariş zaten ödenmiş ya da iptal edilmiş olmasına rağmen iyzico'da bu sipariş için bir ödeme var. Sipariş notlarına bakın.
+iyzico reports a payment that does not match this order. See the order comments and the iyzico merchant panel.,iyzico bu siparişle eşleşmeyen bir ödeme bildiriyor. Sipariş notlarına ve iyzico üye işyeri paneline bakın.
+The order is up to date with iyzico.,Sipariş iyzico ile güncel.
+iyzico did not give a clear answer. Please try again in a moment.,iyzico net bir yanıt vermedi. Lütfen biraz sonra yeniden deneyin.
+live,canlı
+sandbox,test (sandbox)
+No API key and secret key are saved for this scope.,Bu kapsam için kayıtlı API anahtarı ve gizli anahtar yok.
+iyzico could not be reached: %1,iyzico'ya ulaşılamadı: %1
+Connected to iyzico (%1). The keys are valid.,iyzico'ya bağlanıldı (%1). Anahtarlar geçerli.
+iyzico (%1) refused the keys: %2 %3,iyzico (%1) anahtarları kabul etmedi: %2 %3
+Page not found.,Sayfa bulunamadı.
+iyzico Transactions,iyzico İşlemleri
+Payment,Ödeme
+Continue,Devam et
+"The payment was cancelled. Your basket has been restored, so you can try again or choose another payment method.",Ödeme iptal edildi. Sepetiniz geri yüklendi; yeniden deneyebilir ya da başka bir ödeme yöntemi seçebilirsiniz.
+We could not confirm the payment status with iyzico. Please try again in a moment.,Ödeme durumunu iyzico ile doğrulayamadık. Lütfen biraz sonra yeniden deneyin.
+"The order had been cancelled before your payment arrived, so the payment has been given back to your card.",Siparişiniz ödemeniz ulaşmadan önce iptal edilmişti; bu nedenle ödeme kartınıza iade edildi.
+Payment failed: %1 Your order was cancelled and your basket has been restored.,Ödeme başarısız: %1 Siparişiniz iptal edildi ve sepetiniz geri yüklendi.
+"The payment was not completed, so the order was cancelled. You can try again or choose another payment method.",Ödeme tamamlanmadığı için sipariş iptal edildi. Yeniden deneyebilir ya da başka bir ödeme yöntemi seçebilirsiniz.
+There is no order waiting for payment.,Ödeme bekleyen bir sipariş yok.
+iyzico did not open the payment form (%1 %2). The order was cancelled.,iyzico ödeme formunu açmadı (%1 %2). Sipariş iptal edildi.
+Secure Payment,Güvenli Ödeme
+This order has no iyzico payment details. Refund it in the iyzico merchant panel and create an offline credit memo.,Bu siparişte iyzico ödeme bilgisi yok. İadeyi iyzico üye işyeri panelinden yapın ve çevrimdışı bir iade belgesi oluşturun.
+The refund amount must be greater than zero.,İade tutarı sıfırdan büyük olmalıdır.
+iyzico can refund at most %1 %2 for this order.,iyzico bu sipariş için en fazla %1 %2 iade edebilir.
+Everything paid with iyzico for this order has already been refunded.,Bu sipariş için iyzico ile ödenen tutarın tamamı zaten iade edildi.
+iyzico %1: %2 %3 given back to the customer.,iyzico %1: %2 %3 müşteriye iade edildi.
+not enough refundable amount left on the payment,ödemede iade edilebilecek yeterli tutar kalmadı
+"iyzico refunded %1 %2 and then stopped with: %3. The credit memo was not saved. Record the %1 %2 with an offline credit memo, then refund the rest.","iyzico %1 %2 iade etti ve ardından şu hatayla durdu: %3. İade belgesi kaydedilmedi. %1 %2 tutarını çevrimdışı bir iade belgesiyle kaydedin, ardından kalanını iade edin."
+iyzico did not accept the refund: %1,iyzico iadeyi kabul etmedi: %1
+iyzico could not be reached. Nothing was refunded; please try again.,iyzico'ya ulaşılamadı. Hiçbir tutar iade edilmedi; lütfen yeniden deneyin.
+Your card does not have enough limit or balance for this payment. Please use another card.,Kartınızın limiti veya bakiyesi bu ödeme için yeterli değil. Lütfen başka bir kart kullanın.
+The card has expired or the expiry date was entered incorrectly.,Kartın süresi dolmuş ya da son kullanma tarihi hatalı girilmiş.
+The security code (CVC) was not accepted. Please check it and try again.,Güvenlik kodu (CVC) kabul edilmedi. Lütfen kontrol edip yeniden deneyin.
+This card cannot be used for this payment. Please contact your bank or use another card.,Bu kart bu ödeme için kullanılamıyor. Lütfen bankanızla görüşün ya da başka bir kart kullanın.
+Installments are not available for this card. Please pay in a single payment or use another card.,Bu kartla taksit yapılamıyor. Lütfen tek çekim ödeyin ya da başka bir kart kullanın.
+Cards issued outside Türkiye cannot be used for this payment.,Türkiye dışında çıkarılmış kartlar bu ödemede kullanılamıyor.
+The 3-D Secure verification was not completed. Please try again.,3D Secure doğrulaması tamamlanmadı. Lütfen yeniden deneyin.
+The payment was cancelled.,Ödeme iptal edildi.
+Your bank did not respond in time. Please try again in a few minutes.,Bankanız zamanında yanıt vermedi. Lütfen birkaç dakika sonra yeniden deneyin.
+The payment could not be completed. Please contact us or choose another payment method.,Ödeme tamamlanamadı. Lütfen bizimle iletişime geçin ya da başka bir ödeme yöntemi seçin.
+Your bank did not approve the payment. Please try again or choose another payment method.,Bankanız ödemeyi onaylamadı. Lütfen yeniden deneyin ya da başka bir ödeme yöntemi seçin.
+The order is being updated. Please try again in a moment.,Sipariş şu anda güncelleniyor. Lütfen biraz sonra yeniden deneyin.
+The order no longer exists.,Sipariş artık mevcut değil.
+This order has had too many payment attempts. Please place a new order or contact us.,Bu sipariş için çok fazla ödeme denemesi yapıldı. Lütfen yeni bir sipariş verin ya da bizimle iletişime geçin.
+iyzico does not accept payments in %1.,iyzico %1 para biriminde ödeme kabul etmiyor.
+"iyzico could not start the payment. Please check your address and phone number, or choose another payment method.",iyzico ödemeyi başlatamadı. Lütfen adresinizi ve telefon numaranızı kontrol edin ya da başka bir ödeme yöntemi seçin.
+No order waiting for an iyzico payment was found.,iyzico ödemesi bekleyen bir sipariş bulunamadı.
+The iyzico payment was not completed (%1). The order was cancelled.,iyzico ödemesi tamamlanmadı (%1). Sipariş iptal edildi.
+iyzico payment %1 was not registered: %2,%1 numaralı iyzico ödemesi kaydedilmedi: %2
+"iyzico reports payment %1 for this order, but it was not registered: %2 Please check it in the iyzico merchant panel.","iyzico bu sipariş için %1 numaralı ödemeyi bildiriyor, ancak ödeme kaydedilmedi: %2 Lütfen iyzico üye işyeri panelinden kontrol edin."
+the order had already been paid with another payment.,sipariş daha önce başka bir ödemeyle ödenmişti.
+the order had been cancelled before the payment arrived.,"sipariş, ödeme ulaşmadan önce iptal edilmişti."
+iyzico's fraud check rejected payment %1; iyzico gives the money back to the customer. The order was cancelled.,iyzico güvenlik kontrolü %1 numaralı ödemeyi reddetti; iyzico tutarı müşteriye iade eder. Sipariş iptal edildi.
+"the order is in state ""%1"".","sipariş ""%1"" durumunda."
+iyzico payment %1 arrived but was not registered: %2 Please check the order.,%1 numaralı iyzico ödemesi geldi ancak kaydedilmedi: %2 Lütfen siparişi kontrol edin.
+"the basket ID is ""%1"", not the order number.","sepet numarası sipariş numarası değil, ""%1""."
+the conversation ID does not match the order number.,conversation ID sipariş numarasıyla eşleşmiyor.
+"the currency is %1, the order is in %2.","para birimi %1, sipariş ise %2."
+"the amount is %1, the order total is %2.","tutar %1, sipariş toplamı ise %2."
+the amount charged (%1) is less than the order total.,tahsil edilen tutar (%1) sipariş toplamından az.
+the response signature is not valid.,yanıt imzası geçersiz.
+iyzico is reviewing payment %1 (fraud check). Do not ship until iyzico approves it; the order is updated automatically.,iyzico %1 numaralı ödemeyi inceliyor (güvenlik kontrolü). iyzico onaylayana kadar kargolamayın; sipariş otomatik olarak güncellenir.
+The customer paid %1 %2 in %3 installments. The installment charge of %4 %2 is on top of the order total and is not part of the Magento totals; refunds give it back in proportion.,Müşteri %3 taksitle %1 %2 ödedi. %4 %2 tutarındaki taksit farkı sipariş toplamına eklenmiştir ve Magento toplamlarında yer almaz; iadelerde orantılı olarak geri verilir.
+Paid in %1 installments.,%1 taksitle ödendi.
+iyzico payment %1 (%2 %3) was given back automatically: %4,%1 numaralı iyzico ödemesi (%2 %3) otomatik olarak iade edildi: %4
+iyzico payment %1 (%2 %3) needs your attention: %4 It could not be given back automatically (%5). Please refund it in the iyzico merchant panel.,%1 numaralı iyzico ödemesi (%2 %3) ilginizi gerektiriyor: %4 Otomatik olarak iade edilemedi (%5). Lütfen iyzico üye işyeri panelinden iade edin.
+Redirect to iyzico's payment page,iyzico ödeme sayfasına yönlendir
+On this store's page,Mağazanın kendi sayfasında
+Sandbox (test payments),Sandbox (test ödemeleri)
+Live,Canlı
+Approved,Onaylandı
+In review,İncelemede
+Rejected,Reddedildi
+Single payment,Tek çekim
+%1 installments,%1 taksit
+"Store view language (Turkish for Turkish store views, otherwise English)","Mağaza görünümünün dili (Türkçe mağazalarda Türkçe, diğerlerinde İngilizce)"
+Turkish,Türkçe
+English,İngilizce
+Form opened,Form açıldı
+Fraud review,Güvenlik incelemesi
+Failed,Başarısız
+Rejected by fraud review,Güvenlik incelemesinde reddedildi
+Given back (duplicate or late),İade edildi (mükerrer ya da geç ödeme)
+Needs attention,İlgi gerektiriyor
+"The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.",Müşteri iyzico ödeme sayfasından ödeme yapmadan ayrıldı. iyzico'da bu sipariş için ödeme olmadığından sipariş iptal edildi.
+iyzico has no payment for this order. The unpaid order was cancelled.,iyzico'da bu sipariş için ödeme yok. Ödenmemiş sipariş iptal edildi.
+iyzico approved payment %1 after its review. The order can be shipped.,iyzico %1 numaralı ödemeyi inceleme sonrasında onayladı. Sipariş kargolanabilir.
+iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.,iyzico %1 numaralı ödemeyi inceleme sonrasında reddetti ve tutarı müşteriye iade ediyor. Sipariş iptal edildi.
+"iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it.","iyzico'da %1 numaralı sipariş için bir ödeme var (ya da devam eden bir ödeme). Siparişi iptal etmek yerine sipariş sayfasındaki ""Durumu iyzico'da Kontrol Et"" düğmesini kullanın."
+"Your iyzico payment was not completed, so the order was cancelled. Your basket has been restored: you can pay again or choose another payment method.",iyzico ödemeniz tamamlanmadığı için sipariş iptal edildi. Sepetiniz geri yüklendi: yeniden ödeyebilir ya da başka bir ödeme yöntemi seçebilirsiniz.
+CSV,CSV
+Status,Durum
+Payment ID,Ödeme No
+Card Type,Kart Tipi
+BIN,BIN
+Amount Charged,Tahsil Edilen Tutar
+Installment Charge,Taksit Farkı
+iyzico Fees,iyzico Kesintileri
+Sandbox,Sandbox
+Cancelled at iyzico,iyzico'da iptal edildi
+Refunded at iyzico,iyzico'da iade edildi
+Check Status at iyzico,Durumu iyzico'da Kontrol Et
+Test Connection,Bağlantıyı Test Et
+Uses the saved keys of this scope. Save the configuration first after changing them.,Bu kapsamın kayıtlı anahtarlarını kullanır. Anahtarları değiştirdiyseniz önce yapılandırmayı kaydedin.
+Thank you. Your payment for order #%1 has been received.,Teşekkürler. #%1 numaralı siparişinizin ödemesi alındı.
+You will receive an order confirmation by e-mail.,Sipariş onayınız e-posta ile gönderilecek.
+Thank you. Your payment for order #%1 has been received and is being checked by iyzico.,Teşekkürler. #%1 numaralı siparişinizin ödemesi alındı ve iyzico tarafından kontrol ediliyor.
+This usually takes a short while. We will e-mail you as soon as your order is confirmed.,Bu genellikle kısa sürer. Siparişiniz onaylanır onaylanmaz size e-posta göndereceğiz.
+We are waiting for iyzico to confirm the payment for order #%1.,#%1 numaralı siparişin ödemesi için iyzico'nun onayını bekliyoruz.
+"Please do not pay again. If you chose bank transfer, the order is confirmed when the transfer arrives.","Lütfen yeniden ödeme yapmayın. Havale/EFT seçtiyseniz sipariş, ödeme ulaştığında onaylanır."
+Check Again,Yeniden Kontrol Et
+Go to the Basket,Sepete Git
+Continue Shopping,Alışverişe Devam Et
+Order #%1,Sipariş #%1
+Amount to pay: %1,Ödenecek tutar: %1
+iyzico secure payment form,iyzico güvenli ödeme formu
+Your card details are entered on iyzico's secure form and never reach this store.,Kart bilgileriniz iyzico'nun güvenli formuna girilir ve bu mağazaya hiçbir zaman ulaşmaz.
+iyzico cannot be reached at the moment. Your order is saved and nothing has been charged. Please try again in a moment.,iyzico'ya şu anda ulaşılamıyor. Siparişiniz kaydedildi ve kartınızdan herhangi bir tutar çekilmedi. Lütfen biraz sonra yeniden deneyin.
+Try Again,Yeniden Dene
+Cancel Payment and Return to Basket,Ödemeyi İptal Et ve Sepete Dön
+"iyzico ile Öde, Mastercard, Visa, American Express, Troy","iyzico ile Öde, Mastercard, Visa, American Express, Troy"
+%1 inst.,%1 taksit
+Total,Toplam
+Installment Options,Taksit Seçenekleri
+Monthly amount and total for credit cards. Your bank may offer different terms; the final options are shown on the payment page.,Kredi kartları için aylık taksit tutarı ve toplam. Bankanız farklı koşullar sunabilir; kesin seçenekler ödeme sayfasında gösterilir.
+After you place the order you will pay securely on iyzico's payment form. Installment options are shown there for eligible cards.,Siparişi verdikten sonra ödemeyi iyzico'nun güvenli ödeme formunda yapacaksınız. Uygun kartlar için taksit seçenekleri orada gösterilir.
+Test mode: no real payment is taken.,Test modu: gerçek bir ödeme alınmaz.
+Continue to Payment,Ödemeye Geç
+iyzico,iyzico
+Configuration,Yapılandırma
+iyzico (Softaware),iyzico (Softaware)
+Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.,Müşteriler iyzico'nun güvenli ödeme formunda öder (kart bilgileri bu mağazaya hiçbir zaman ulaşmaz). Yalnızca API anahtarı ve gizli anahtar gereklidir; diğer tüm ayarların uygun varsayılan değerleri vardır. Anahtarlar iyzico üye işyeri panelinde Ayarlar &gt; Firma Ayarları bölümündedir.
+Enabled,Etkin
+Title,Başlık
+Environment,Ortam
+"Sandbox keys start with ""sandbox-"". Live and sandbox keys are different.","Sandbox anahtarları ""sandbox-"" ile başlar. Canlı ve sandbox anahtarları farklıdır."
+API Key,API Anahtarı
+Secret Key,Gizli Anahtar
+Connection,Bağlantı
+Merchant Notification URL,Üye İşyeri Bildirim Adresi
+Payment Page,Ödeme Sayfası
+"Both show iyzico's own form. ""On this store's page"" keeps your header and footer around it.","İkisi de iyzico'nun kendi formunu gösterir. ""Mağazanın kendi sayfasında"" seçeneği formu sitenizin üst ve alt kısmıyla birlikte gösterir."
+Leave all unselected to offer what is set up in your iyzico panel. Rates are managed in the iyzico panel.,iyzico panelinizde tanımlı seçenekleri sunmak için hiçbirini seçmeyin. Taksit oranları iyzico panelinden yönetilir.
+Payment Page Language,Ödeme Sayfası Dili
+Show Installment Options on Product Pages,Ürün Sayfalarında Taksit Seçeneklerini Göster
+"Loads after the page (cached), so it does not slow the product page down.","Sayfadan sonra yüklenir (önbelleğe alınır), ürün sayfasını yavaşlatmaz."
+Payment from Applicable Countries,Geçerli Ülkelerden Ödeme
+Payment from Specific Countries,Belirli Ülkelerden Ödeme
+Minimum Order Total,En Düşük Sipariş Tutarı
+Maximum Order Total,En Yüksek Sipariş Tutarı
+Sort Order,Sıralama
+Advanced,Gelişmiş
+Order Status While iyzico Reviews a Payment,iyzico Ödemeyi İncelerken Sipariş Durumu
+Used when iyzico's fraud check holds a payment for review. Do not ship until iyzico approves it.,iyzico güvenlik kontrolü bir ödemeyi incelemeye aldığında kullanılır. iyzico onaylayana kadar kargolamayın.
+Cancel Unpaid Orders After (Minutes),Ödenmemiş Siparişleri İptal Etme Süresi (Dakika)
+Orders still waiting for payment are checked with iyzico after this time and cancelled only if iyzico has no payment for them. 35 to 10080.,Hâlâ ödeme bekleyen siparişler bu süreden sonra iyzico'ya sorulur ve yalnızca iyzico'da ödemeleri yoksa iptal edilir. 35 ile 10080 arası.
+Identity Number When None Is Given,Kimlik Numarası Girilmediğinde Kullanılacak Değer
+iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.,iyzico kimlik numarası ister. Müşterinin vergi numarası alanında geçerli bir T.C. Kimlik No varsa o gönderilir; yoksa bu değer.
+Debug Log,Hata Ayıklama Kaydı
+"Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","API isteklerini ve yanıtlarını anahtarlar, token'lar ve kişisel veriler maskelenmiş olarak var/log/softaware_iyzico.log dosyasına yazar. Hatalar her zaman kaydedilir."
+ID,ID
+Date,Tarih
+Order,Sipariş
+Order Number,Sipariş No
+Order Amount,Sipariş Tutarı
+Refunded,İade Edilen
+Currency,Para Birimi
+Fraud Check,Güvenlik Kontrolü
+Last Four,Son Dört Hane
+Error Code,Hata Kodu
+Error Message,Hata Mesajı
+Store View,Mağaza Görünümü
+View iyzico Transactions,iyzico İşlemlerini Görüntüle
+Check Payment Status at iyzico,Ödeme Durumunu iyzico'da Kontrol Et
+iyzico Settings and Connection Test,iyzico Ayarları ve Bağlantı Testi
+cancelled the payment,ödemeyi iptal etti
+refund,iade
