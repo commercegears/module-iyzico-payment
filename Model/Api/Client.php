@@ -146,6 +146,16 @@ class Client
     }
 
     /**
+     * True when iyzico refused the store's credentials or request headers (1000-1099, e.g. 1001 "api credentials
+     * are not found"): a configuration problem of the store, it says nothing about a payment.
+     */
+    public static function isCredentialFailure(array $response): bool
+    {
+        $code = (string)($response['errorCode'] ?? '');
+        return ($response['status'] ?? '') !== 'success' && preg_match('/^10\d\d$/', $code) === 1;
+    }
+
+    /**
      * True for documented iyzico failures that only mean "try again later" (system error, rate limit).
      */
     public static function isTemporaryFailure(array $response): bool

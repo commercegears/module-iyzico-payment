@@ -100,6 +100,14 @@ class PaymentStarter
             if (Client::isTemporaryFailure($response)) {
                 throw new ApiException('iyzico is temporarily unavailable (' . $code . ').');
             }
+            if (Client::isCredentialFailure($response)) {
+                $this->log->error('iyzico refused the API keys: check the iyzico payment method settings', ['errorCode' => $code]);
+                throw new PaymentStartException(
+                    __('Card payment with iyzico is not available at the moment. Please choose another payment method.'),
+                    $code,
+                    (string)($response['errorMessage'] ?? '')
+                );
+            }
             throw new PaymentStartException(
                 __('iyzico could not start the payment. Please check your address and phone number, or choose another payment method.'),
                 $code,

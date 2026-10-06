@@ -193,3 +193,4 @@ iyzico Settings and Connection Test,iyzico Settings and Connection Test
 cancelled the payment,cancelled the payment
 refund,refund
 "Payment failed: %1 The order was cancelled.","Payment failed: %1 The order was cancelled."
+"Card payment with iyzico is not available at the moment. Please choose another payment method.","Card payment with iyzico is not available at the moment. Please choose another payment method."

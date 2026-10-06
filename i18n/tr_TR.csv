@@ -193,3 +193,4 @@ iyzico Settings and Connection Test,iyzico Ayarları ve Bağlantı Testi
 cancelled the payment,ödemeyi iptal etti
 refund,iade
 "Payment failed: %1 The order was cancelled.","Ödeme başarısız: %1 Sipariş iptal edildi."
+"Card payment with iyzico is not available at the moment. Please choose another payment method.","iyzico ile kartla ödeme şu anda kullanılamıyor. Lütfen başka bir ödeme yöntemi seçin."

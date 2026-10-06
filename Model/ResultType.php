@@ -30,7 +30,7 @@ class ResultType
     ];
 
     /** Error codes that say nothing about the payment itself (system error, rate limit, credentials, request). */
-    private const NOT_A_RESULT_CODES = ['1', '2', '11', '50000', '1000', '1001'];
+    private const NOT_A_RESULT_CODES = ['1', '2', '11', '50000'];
 
     public static function of(array $response): string
     {
@@ -42,7 +42,7 @@ class ResultType
         if (in_array($paymentStatus, self::PENDING_STATUSES, true)) {
             return self::PENDING;
         }
-        if (Client::isTemporaryFailure($response)) {
+        if (Client::isTemporaryFailure($response) || Client::isCredentialFailure($response)) {
             return self::UNKNOWN;
         }
         if ($paymentStatus === 'FAILURE') {
