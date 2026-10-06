@@ -1,0 +1,41 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ *
+ * Result page (Luma) for visitors who are not in the checkout session that placed the order.
+ */
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Softaware\IyzicoPayment\ViewModel\PaymentPage $viewModel */
+$viewModel = $block->getData('view_model');
+$state = $viewModel->getState();
+$order = $viewModel->getIncrementId();
+?>
+<div class="softaware-iyzico-page softaware-iyzico-result">
+    <?php if ($state === 'paid'): ?>
+        <div class="message success"><div><?= $escaper->escapeHtml(__('Thank you. Your payment for order #%1 has been received.', $order)) ?></div></div>
+        <p><?= $escaper->escapeHtml(__('You will receive an order confirmation by e-mail.')) ?></p>
+    <?php elseif ($state === 'review'): ?>
+        <div class="message notice"><div><?= $escaper->escapeHtml(__('Thank you. Your payment for order #%1 has been received and is being checked by iyzico.', $order)) ?></div></div>
+        <p><?= $escaper->escapeHtml(__('This usually takes a short while. We will e-mail you as soon as your order is confirmed.')) ?></p>
+    <?php elseif ($state === 'pending'): ?>
+        <div class="message notice"><div><?= $escaper->escapeHtml(__('We are waiting for iyzico to confirm the payment for order #%1.', $order)) ?></div></div>
+        <p><?= $escaper->escapeHtml(__('Please do not pay again. If you chose bank transfer, the order is confirmed when the transfer arrives.')) ?></p>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <a class="action primary" href="<?= $escaper->escapeUrl($viewModel->getCheckUrl()) ?>"><span><?= $escaper->escapeHtml(__('Check Again')) ?></span></a>
+            </div>
+        </div>
+    <?php else: ?>
+        <div class="message error"><div><?= $escaper->escapeHtml($viewModel->getMessage()) ?></div></div>
+    <?php endif; ?>
+    <div class="actions-toolbar">
+        <div class="secondary">
+            <a class="action continue" href="<?= $escaper->escapeUrl($state === 'failed' ? $viewModel->getCartUrl() : $viewModel->getHomeUrl()) ?>">
+                <span><?= $escaper->escapeHtml($state === 'failed' ? __('Go to the Basket') : __('Continue Shopping')) ?></span>
+            </a>
+        </div>
+    </div>
+</div>

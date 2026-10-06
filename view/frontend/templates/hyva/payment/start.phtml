@@ -1,0 +1,42 @@
+<?php
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ *
+ * Payment page (Hyvä): iyzico's form in a frame, or an error with "Try again".
+ */
+/** @var \Magento\Framework\View\Element\Template $block */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Softaware\IyzicoPayment\ViewModel\PaymentPage $viewModel */
+$viewModel = $block->getData('view_model');
+$state = $viewModel->getState();
+?>
+<div class="mx-auto max-w-3xl my-6">
+    <p class="flex flex-wrap justify-between gap-2 mb-4 text-lg">
+        <span><?= $escaper->escapeHtml(__('Order #%1', $viewModel->getIncrementId())) ?></span>
+        <span class="font-semibold"><?= $escaper->escapeHtml(__('Amount to pay: %1', $viewModel->getAmount())) ?></span>
+    </p>
+    <?php if ($state === 'frame'): ?>
+        <div class="w-full rounded-lg border border-gray-300 bg-white overflow-hidden">
+            <iframe class="block w-full border-0 h-[56rem] md:h-[46rem]"
+                    src="<?= $escaper->escapeUrl($viewModel->getFrameUrl()) ?>"
+                    title="<?= $escaper->escapeHtmlAttr(__('iyzico secure payment form')) ?>"
+                    allow="payment"></iframe>
+        </div>
+        <p class="mt-3 text-sm text-gray-600"><?= $escaper->escapeHtml(__('Your card details are entered on iyzico\'s secure form and never reach this store.')) ?></p>
+    <?php else: ?>
+        <div class="message error mb-4">
+            <span><?= $escaper->escapeHtml(__('iyzico cannot be reached at the moment. Your order is saved and nothing has been charged. Please try again in a moment.')) ?></span>
+        </div>
+        <a class="btn btn-primary inline-flex" href="<?= $escaper->escapeUrl($viewModel->getRetryUrl()) ?>"><?= $escaper->escapeHtml(__('Try Again')) ?></a>
+    <?php endif; ?>
+    <form class="mt-6" method="post" action="<?= $escaper->escapeUrl($viewModel->getCancelUrl()) ?>">
+        <input type="hidden" name="form_key" value="<?= $escaper->escapeHtmlAttr($viewModel->getFormKey()) ?>"/>
+        <?php if ($viewModel->getOrderToken() !== ''): ?>
+            <input type="hidden" name="t" value="<?= $escaper->escapeHtmlAttr($viewModel->getOrderToken()) ?>"/>
+        <?php endif; ?>
+        <button type="submit" class="btn btn-secondary"><?= $escaper->escapeHtml(__('Cancel Payment and Return to Basket')) ?></button>
+    </form>
+    <img class="mt-6 h-auto w-72 max-w-full" src="<?= $escaper->escapeUrl($viewModel->getLogoUrl()) ?>" alt="<?= $escaper->escapeHtmlAttr(__('iyzico ile Öde, Mastercard, Visa, American Express, Troy')) ?>" width="300" height="22" loading="lazy"/>
+</div>
