@@ -38,8 +38,7 @@
                 <can_capture_partial>0</can_capture_partial>
                 <can_void>0</can_void>
                 <can_review_payment>0</can_review_payment>
-                <can_fetch_transaction_info>1</can_fetch_transaction_info>
-                <can_fetch_transaction_information>1</can_fetch_transaction_information>
+                <can_fetch_transaction_info>0</can_fetch_transaction_info>
                 <can_authorize>0</can_authorize>
                 <can_order>0</can_order>
                 <can_use_for_multishipping>0</can_use_for_multishipping>
