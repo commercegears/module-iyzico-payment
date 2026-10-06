@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Softaware_Base::base">
+                    <resource id="Softaware_IyzicoPayment::iyzico" title="iyzico" sortOrder="70">
+                        <resource id="Softaware_IyzicoPayment::transactions" title="View iyzico Transactions" sortOrder="10"/>
+                        <resource id="Softaware_IyzicoPayment::check_status" title="Check Payment Status at iyzico" sortOrder="20"/>
+                        <resource id="Softaware_IyzicoPayment::config" title="iyzico Settings and Connection Test" sortOrder="30"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

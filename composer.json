@@ -1,0 +1,41 @@
+{
+    "name": "softaware/module-iyzico-payment",
+    "description": "iyzico payments for Magento 2 (Checkout Form): hosted card entry with installments and 3-D Secure, verified callbacks, signed webhooks, lost-payment recovery, fraud review, online refunds, transactions grid. Luma and Hyvä.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Softaware Commerce Ltd",
+            "homepage": "https://softawarecommerce.com/"
+        }
+    ],
+    "require": {
+        "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
+        "ext-json": "*",
+        "magento/framework": "~103.0.7",
+        "softaware/module-base": "^1.2",
+        "magento/module-backend": "*",
+        "magento/module-catalog": "*",
+        "magento/module-checkout": "*",
+        "magento/module-config": "*",
+        "magento/module-customer": "*",
+        "magento/module-directory": "*",
+        "magento/module-payment": "*",
+        "magento/module-quote": "*",
+        "magento/module-sales": "*",
+        "magento/module-store": "*",
+        "magento/module-ui": "*"
+    },
+    "suggest": {
+        "hyva-themes/magento2-default-theme": "Hyvä templates for the payment, result and installment blocks are included",
+        "magento/module-csp": "The iyzico domains used by the payment page are added to the Content Security Policy"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Softaware\\IyzicoPayment\\": ""
+        }
+    }
+}

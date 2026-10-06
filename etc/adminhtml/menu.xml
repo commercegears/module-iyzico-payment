@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Softaware_IyzicoPayment::iyzico" title="iyzico" translate="title" module="Softaware_IyzicoPayment"
+             sortOrder="70" parent="Softaware_Base::base" resource="Softaware_IyzicoPayment::iyzico"/>
+        <add id="Softaware_IyzicoPayment::transactions" title="iyzico Transactions" translate="title" module="Softaware_IyzicoPayment"
+             sortOrder="10" parent="Softaware_IyzicoPayment::iyzico" action="softaware_iyzico/transaction/index"
+             resource="Softaware_IyzicoPayment::transactions"/>
+        <add id="Softaware_IyzicoPayment::config" title="Configuration" translate="title" module="Softaware_IyzicoPayment"
+             sortOrder="20" parent="Softaware_IyzicoPayment::iyzico"
+             action="adminhtml/system_config/edit/section/payment"
+             resource="Softaware_IyzicoPayment::config"/>
+    </menu>
+</config>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <softaware_iyzico>
+                <active>0</active>
+                <model>SoftawareIyzicoFacade</model>
+                <title>Credit / Debit Card (iyzico)</title>
+                <environment>sandbox</environment>
+                <api_key backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <secret_key backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <display_mode>redirect</display_mode>
+                <installments/>
+                <language>auto</language>
+                <installment_table>0</installment_table>
+                <allowspecific>0</allowspecific>
+                <sort_order>10</sort_order>
+                <review_status>payment_review</review_status>
+                <pending_timeout>60</pending_timeout>
+                <default_identity_number>11111111111</default_identity_number>
+                <debug>0</debug>
+                <payment_action>authorize_capture</payment_action>
+                <order_place_redirect_url>1</order_place_redirect_url>
+                <is_gateway>1</is_gateway>
+                <can_initialize>1</can_initialize>
+                <can_use_checkout>1</can_use_checkout>
+                <can_use_internal>0</can_use_internal>
+                <can_refund>1</can_refund>
+                <can_refund_partial_per_invoice>1</can_refund_partial_per_invoice>
+                <can_capture>0</can_capture>
+                <can_capture_partial>0</can_capture_partial>
+                <can_void>0</can_void>
+                <can_review_payment>0</can_review_payment>
+                <can_fetch_transaction_info>1</can_fetch_transaction_info>
+                <can_fetch_transaction_information>1</can_fetch_transaction_information>
+                <can_authorize>0</can_authorize>
+                <can_order>0</can_order>
+                <can_use_for_multishipping>0</can_use_for_multishipping>
+                <can_save_cc>0</can_save_cc>
+                <is_offline>0</is_offline>
+            </softaware_iyzico>
+        </payment>
+    </default>
+</config>

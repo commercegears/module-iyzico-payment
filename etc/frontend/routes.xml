@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="softaware_iyzico" frontName="softaware_iyzico">
+            <module name="Softaware_IyzicoPayment"/>
+        </route>
+    </router>
+</config>

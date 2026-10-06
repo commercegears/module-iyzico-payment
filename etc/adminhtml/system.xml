@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category  Softaware
+ * @package   Softaware_IyzicoPayment
+ * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="softaware_iyzico" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>iyzico (Softaware)</label>
+                <comment><![CDATA[Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.]]></comment>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Title</label>
+                </field>
+                <field id="environment" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Environment</label>
+                    <source_model>Softaware\IyzicoPayment\Model\Source\Environment</source_model>
+                    <comment>Sandbox keys start with "sandbox-". Live and sandbox keys are different.</comment>
+                </field>
+                <field id="api_key" translate="label" type="obscure" sortOrder="40" showInDefault="1" showInWebsite="1">
+                    <label>API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="secret_key" translate="label" type="obscure" sortOrder="50" showInDefault="1" showInWebsite="1">
+                    <label>Secret Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <validate>required-entry</validate>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+                <field id="test_connection" translate="label" type="button" sortOrder="55" showInDefault="1" showInWebsite="1">
+                    <label>Connection</label>
+                    <frontend_model>Softaware\IyzicoPayment\Block\Adminhtml\System\TestConnection</frontend_model>
+                </field>
+                <field id="webhook_url" translate="label" type="label" sortOrder="58" showInDefault="1" showInWebsite="1">
+                    <label>Merchant Notification URL</label>
+                    <frontend_model>Softaware\IyzicoPayment\Block\Adminhtml\System\WebhookUrl</frontend_model>
+                </field>
+                <field id="display_mode" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Payment Page</label>
+                    <source_model>Softaware\IyzicoPayment\Model\Source\DisplayMode</source_model>
+                    <comment>Both show iyzico's own form. "On this store's page" keeps your header and footer around it.</comment>
+                </field>
+                <field id="installments" translate="label comment" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Installment Options</label>
+                    <source_model>Softaware\IyzicoPayment\Model\Source\Installments</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment>Leave all unselected to offer what is set up in your iyzico panel. Rates are managed in the iyzico panel.</comment>
+                </field>
+                <field id="language" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Payment Page Language</label>
+                    <source_model>Softaware\IyzicoPayment\Model\Source\Language</source_model>
+                </field>
+                <field id="installment_table" translate="label comment" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show Installment Options on Product Pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Loads after the page (cached), so it does not slow the product page down.</comment>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="100" showInDefault="1" showInWebsite="1" canRestore="1">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="110" showInDefault="1" showInWebsite="1">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <depends>
+                        <field id="allowspecific">1</field>
+                    </depends>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="120" showInDefault="1" showInWebsite="1">
+                    <label>Minimum Order Total</label>
+                    <validate>validate-zero-or-greater</validate>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1">
+                    <label>Maximum Order Total</label>
+                    <validate>validate-zero-or-greater</validate>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="140" showInDefault="1" showInWebsite="1">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+                <group id="advanced" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1">
+                    <label>Advanced</label>
+                    <field id="review_status" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" canRestore="1">
+                        <label>Order Status While iyzico Reviews a Payment</label>
+                        <source_model>Softaware\IyzicoPayment\Model\Source\ReviewStatus</source_model>
+                        <config_path>payment/softaware_iyzico/review_status</config_path>
+                        <comment>Used when iyzico's fraud check holds a payment for review. Do not ship until iyzico approves it.</comment>
+                    </field>
+                    <field id="pending_timeout" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" canRestore="1">
+                        <label>Cancel Unpaid Orders After (Minutes)</label>
+                        <validate>required-entry validate-digits validate-digits-range digits-range-35-10080</validate>
+                        <config_path>payment/softaware_iyzico/pending_timeout</config_path>
+                        <comment>Orders still waiting for payment are checked with iyzico after this time and cancelled only if iyzico has no payment for them. 35 to 10080.</comment>
+                    </field>
+                    <field id="default_identity_number" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" canRestore="1">
+                        <label>Identity Number When None Is Given</label>
+                        <validate>required-entry validate-digits validate-length minimum-length-5 maximum-length-50</validate>
+                        <config_path>payment/softaware_iyzico/default_identity_number</config_path>
+                        <comment>iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.</comment>
+                    </field>
+                    <field id="debug" translate="label comment" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" canRestore="1">
+                        <label>Debug Log</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                        <config_path>payment/softaware_iyzico/debug</config_path>
+                        <comment>Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged.</comment>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>
