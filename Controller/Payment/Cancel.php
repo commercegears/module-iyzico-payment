@@ -14,7 +14,6 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Message\ManagerInterface;
-use Magento\Sales\Model\Order;
 use Softaware\IyzicoPayment\Model\Log;
 use Softaware\IyzicoPayment\Model\OrderStatusService;
 use Softaware\IyzicoPayment\Model\OrderToken;

@@ -142,10 +142,7 @@ class CheckoutFormRequest
     private function country(?OrderAddressInterface $address): string
     {
         $code = strtoupper((string)$address?->getCountryId());
-        if ($code === '') {
-            return 'Turkey';
-        }
-        if ($code === 'TR') {
+        if ($code === '' || $code === 'TR') {
             return 'Turkey';
         }
         $name = class_exists(\Locale::class) ? (string)\Locale::getDisplayRegion('-' . $code, 'en') : '';

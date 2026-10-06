@@ -49,7 +49,6 @@ class RefundCommand implements CommandInterface
         $baseAmount = (float)SubjectReader::readAmount($commandSubject);
         /** @var Order $order */
         $order = $payment->getOrder();
-        $storeId = (int)$order->getStoreId();
         $paymentId = (string)$payment->getAdditionalInformation(PaymentInfo::PAYMENT_ID);
         $items = (array)$payment->getAdditionalInformation(PaymentInfo::ITEMS);
         if ($paymentId === '' || !$items) {
