@@ -1,9 +1,6 @@
 # Changelog
 
 ## 1.0.0 (2026-10-11)
-- Improvement: renamed to CommerceGears (new Composer package, admin menu and settings paths)
-
-## 1.0.0 (2026-10-06)
 - New: first release with iyzico Checkout Form payments by redirect or in a frame (Luma and Hyvä).
 - New: payments verified before capture; declined and abandoned orders cancelled, basket restored.
 - New: fraud reviews, lost callbacks and duplicate payments handled automatically.
