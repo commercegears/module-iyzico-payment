@@ -1,14 +1,14 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Api;
+namespace CommerceGears\IyzicoPayment\Model\Api;
 
-use Softaware\IyzicoPayment\Model\Amount;
+use CommerceGears\IyzicoPayment\Model\Amount;
 
 /**
  * iyzico HMAC-SHA256 signatures (docs: "HMACSHA256 Auth", "Response Signature Validation", "Webhook").

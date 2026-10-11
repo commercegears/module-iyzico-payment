@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\System;
+namespace CommerceGears\IyzicoPayment\Model\System;
 
 use Magento\Framework\AuthorizationInterface;
 use Magento\Framework\Notification\MessageInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Config;
 
 /**
  * Admin system message while iyzico is switched on for a website that has no T.C. Kimlik No attribute mapped:
@@ -32,12 +32,12 @@ class IdentityNotMappedMessage implements MessageInterface
 
     public function getIdentity(): string
     {
-        return 'softaware_iyzico_identity_not_mapped_' . implode('_', $this->getWebsites());
+        return 'commercegears_iyzico_identity_not_mapped_' . implode('_', $this->getWebsites());
     }
 
     public function isDisplayed(): bool
     {
-        return $this->authorization->isAllowed('Softaware_IyzicoPayment::config') && $this->getWebsites() !== [];
+        return $this->authorization->isAllowed('CommerceGears_IyzicoPayment::config') && $this->getWebsites() !== [];
     }
 
     public function getText(): string

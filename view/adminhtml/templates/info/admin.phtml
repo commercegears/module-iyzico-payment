@@ -1,14 +1,14 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  *
  * iyzico panel in the admin order, invoice and credit memo views.
  */
-/** @var \Softaware\IyzicoPayment\Block\Info $block */
+/** @var \CommerceGears\IyzicoPayment\Block\Info $block */
 /** @var \Magento\Framework\Escaper $escaper */
-use Softaware\IyzicoPayment\Model\PaymentInfo;
+use CommerceGears\IyzicoPayment\Model\PaymentInfo;
 
 $currency = $block->getCurrency();
 $paid = $block->getValue(PaymentInfo::PAID_PRICE);
@@ -30,7 +30,7 @@ $rows = [
     (string)__('Identity Number') => $block->getIdentityText(),
 ];
 ?>
-<div class="softaware-iyzico-info">
+<div class="commercegears-iyzico-info">
     <strong><?= $escaper->escapeHtml($block->getMethod()->getTitle()) ?></strong>
     <?php if ($block->isSandbox()): ?>
         <span class="grid-severity-minor" style="display:inline-block;width:auto;margin-left:8px;padding:0 8px;line-height:1.6"><span><?= $escaper->escapeHtml(__('Sandbox')) ?></span></span>

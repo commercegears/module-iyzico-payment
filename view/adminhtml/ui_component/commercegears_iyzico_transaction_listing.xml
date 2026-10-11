@@ -1,32 +1,32 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">softaware_iyzico_transaction_listing.softaware_iyzico_transaction_listing_data_source</item>
+            <item name="provider" xsi:type="string">commercegears_iyzico_transaction_listing.commercegears_iyzico_transaction_listing_data_source</item>
         </item>
     </argument>
     <settings>
-        <spinner>softaware_iyzico_transaction_listing_columns</spinner>
+        <spinner>commercegears_iyzico_transaction_listing_columns</spinner>
         <deps>
-            <dep>softaware_iyzico_transaction_listing.softaware_iyzico_transaction_listing_data_source</dep>
+            <dep>commercegears_iyzico_transaction_listing.commercegears_iyzico_transaction_listing_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="softaware_iyzico_transaction_listing_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="commercegears_iyzico_transaction_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
                 <param name="indexField" xsi:type="string">entity_id</param>
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
-        <aclResource>Softaware_IyzicoPayment::transactions</aclResource>
-        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="softaware_iyzico_transaction_listing_data_source">
+        <aclResource>CommerceGears_IyzicoPayment::transactions</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="commercegears_iyzico_transaction_listing_data_source">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>entity_id</primaryFieldName>
@@ -39,11 +39,11 @@
         </settings>
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
-        <exportButton name="export_button" class="Softaware\IyzicoPayment\Ui\Component\CsvExportButton"/>
+        <exportButton name="export_button" class="CommerceGears\IyzicoPayment\Ui\Component\CsvExportButton"/>
         <filters name="listing_filters"/>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="softaware_iyzico_transaction_listing_columns">
+    <columns name="commercegears_iyzico_transaction_listing_columns">
         <column name="entity_id" sortOrder="10">
             <settings>
                 <filter>textRange</filter>
@@ -58,7 +58,7 @@
                 <label translate="true">Date</label>
             </settings>
         </column>
-        <column name="increment_id_link" class="Softaware\IyzicoPayment\Ui\Component\Listing\Column\OrderLink" sortOrder="30">
+        <column name="increment_id_link" class="CommerceGears\IyzicoPayment\Ui\Component\Listing\Column\OrderLink" sortOrder="30">
             <settings>
                 <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <sortable>false</sortable>
@@ -81,7 +81,7 @@
         <column name="status" sortOrder="60" component="Magento_Ui/js/grid/columns/select">
             <settings>
                 <filter>select</filter>
-                <options class="Softaware\IyzicoPayment\Model\Source\TransactionStatus"/>
+                <options class="CommerceGears\IyzicoPayment\Model\Source\TransactionStatus"/>
                 <dataType>select</dataType>
                 <label translate="true">Status</label>
             </settings>
@@ -119,7 +119,7 @@
         <column name="fraud_status" sortOrder="120" component="Magento_Ui/js/grid/columns/select">
             <settings>
                 <filter>select</filter>
-                <options class="Softaware\IyzicoPayment\Model\Source\FraudStatus"/>
+                <options class="CommerceGears\IyzicoPayment\Model\Source\FraudStatus"/>
                 <dataType>select</dataType>
                 <label translate="true">Fraud Check</label>
             </settings>
@@ -140,7 +140,7 @@
         <column name="environment" sortOrder="150" component="Magento_Ui/js/grid/columns/select">
             <settings>
                 <filter>select</filter>
-                <options class="Softaware\IyzicoPayment\Model\Source\Environment"/>
+                <options class="CommerceGears\IyzicoPayment\Model\Source\Environment"/>
                 <dataType>select</dataType>
                 <label translate="true">Environment</label>
             </settings>

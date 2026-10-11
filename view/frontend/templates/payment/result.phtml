@@ -1,19 +1,19 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  *
  * Result page (Luma) for visitors who are not in the checkout session that placed the order.
  */
 /** @var \Magento\Framework\View\Element\Template $block */
 /** @var \Magento\Framework\Escaper $escaper */
-/** @var \Softaware\IyzicoPayment\ViewModel\PaymentPage $viewModel */
+/** @var \CommerceGears\IyzicoPayment\ViewModel\PaymentPage $viewModel */
 $viewModel = $block->getData('view_model');
 $state = $viewModel->getState();
 $order = $viewModel->getIncrementId();
 ?>
-<div class="softaware-iyzico-page softaware-iyzico-result">
+<div class="commercegears-iyzico-page commercegears-iyzico-result">
     <?php if ($state === 'paid'): ?>
         <div class="message success"><div><?= $escaper->escapeHtml(__('Thank you. Your payment for order #%1 has been received.', $order)) ?></div></div>
         <p><?= $escaper->escapeHtml(__('You will receive an order confirmation by e-mail.')) ?></p>

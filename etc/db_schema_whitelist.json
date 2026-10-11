@@ -1,5 +1,5 @@
 {
-    "softaware_iyzico_transaction": {
+    "commercegears_iyzico_transaction": {
         "column": {
             "entity_id": true,
             "order_id": true,
@@ -30,15 +30,15 @@
             "updated_at": true
         },
         "index": {
-            "SOFTAWARE_IYZICO_TRANSACTION_PAYMENT_ID": true,
-            "SOFTAWARE_IYZICO_TRANSACTION_INCREMENT_ID": true,
-            "SOFTAWARE_IYZICO_TRANSACTION_STATUS": true,
-            "SOFTAWARE_IYZICO_TRANSACTION_CREATED_AT": true
+            "COMMERCEGEARS_IYZICO_TRANSACTION_PAYMENT_ID": true,
+            "COMMERCEGEARS_IYZICO_TRANSACTION_INCREMENT_ID": true,
+            "COMMERCEGEARS_IYZICO_TRANSACTION_STATUS": true,
+            "COMMERCEGEARS_IYZICO_TRANSACTION_CREATED_AT": true
         },
         "constraint": {
             "PRIMARY": true,
-            "SOFTAWARE_IYZICO_TRANSACTION_TOKEN": true,
-            "SOFTAWARE_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID": true
+            "COMMERCEGEARS_IYZICO_TRANSACTION_TOKEN": true,
+            "COMMERCEGEARS_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID": true
         }
     }
 }

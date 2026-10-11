@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Payment;
+namespace CommerceGears\IyzicoPayment\Controller\Payment;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpGetActionInterface;
@@ -16,15 +16,15 @@ use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\ErrorMessages;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\OrderToken;
-use Softaware\IyzicoPayment\Model\PageState;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\Transaction;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\ErrorMessages;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\OrderToken;
+use CommerceGears\IyzicoPayment\Model\PageState;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\Transaction;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * Where the customer lands after iyzico (GET, with the visitor's own session again).

@@ -1,17 +1,17 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\App\CacheInterface;
 use Magento\Framework\Serialize\Serializer\Json;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
 
 /**
  * Installment options for an amount (iyzico installment service without a card number: one row per card
@@ -22,7 +22,7 @@ class InstallmentTable
 {
     private const CACHE_TTL = 21600;
     private const FAILURE_TTL = 600;
-    public const CACHE_TAG = 'SOFTAWARE_IYZICO_INSTALLMENTS';
+    public const CACHE_TAG = 'COMMERCEGEARS_IYZICO_INSTALLMENTS';
 
     public function __construct(
         private readonly Client $client,
@@ -42,7 +42,7 @@ class InstallmentTable
         if ($minor <= 0 || !$this->config->isInstallmentTableEnabled($storeId) || !$this->config->hasCredentials($storeId)) {
             return $empty;
         }
-        $key = 'softaware_iyzico_inst_' . $this->config->getEnvironment($storeId) . '_' . $storeId . '_' . $minor;
+        $key = 'commercegears_iyzico_inst_' . $this->config->getEnvironment($storeId) . '_' . $storeId . '_' . $minor;
         $cached = $this->cache->load($key);
         if ($cached !== false && $cached !== null) {
             return (array)$this->json->unserialize($cached);

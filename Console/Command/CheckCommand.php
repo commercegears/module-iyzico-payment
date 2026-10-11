@@ -1,20 +1,20 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Console\Command;
+namespace CommerceGears\IyzicoPayment\Console\Command;
 
 use Magento\Framework\App\Area;
 use Magento\Framework\App\State;
 use Magento\Sales\Model\OrderFactory;
-use Softaware\IyzicoPayment\Cron\CheckPendingPayments;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Cron\CheckPendingPayments;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -22,7 +22,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * bin/magento softaware:iyzico:check [order number] [--cancel-unpaid]
+ * bin/magento commercegears:iyzico:check [order number] [--cancel-unpaid]
  * Without an order number: runs the scheduled check (waiting and fraud-review orders) now.
  */
 class CheckCommand extends Command
@@ -38,7 +38,7 @@ class CheckCommand extends Command
 
     protected function configure(): void
     {
-        $this->setName('softaware:iyzico:check')
+        $this->setName('commercegears:iyzico:check')
             ->setDescription('Asks iyzico for the payment status of an order (or of all waiting orders) and updates it')
             ->addArgument('order', InputArgument::OPTIONAL, 'Order number (increment ID)')
             ->addOption('cancel-unpaid', null, InputOption::VALUE_NONE, 'Cancel the order if iyzico has no payment for it');

@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Request;
+namespace CommerceGears\IyzicoPayment\Model\Request;
 
 use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
 use Magento\Framework\App\ResourceConnection;

@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\App\DeploymentConfig;
 use Magento\Framework\Config\ConfigOptionsListConstants;
@@ -59,7 +59,7 @@ class OrderToken
     {
         $keys = (string)$this->deploymentConfig->get(ConfigOptionsListConstants::CONFIG_PATH_CRYPT_KEY);
         $keys = preg_split('/\s+/', trim($keys)) ?: [''];
-        return hash('sha256', 'softaware_iyzico_order_token|' . end($keys), true);
+        return hash('sha256', 'commercegears_iyzico_order_token|' . end($keys), true);
     }
 
     private function encode(string $value): string

@@ -1,5 +1,5 @@
 /**
- * Softaware_IyzicoPayment: places the order, then sends the customer to the payment page, which opens iyzico's
+ * CommerceGears_IyzicoPayment: places the order, then sends the customer to the payment page, which opens iyzico's
  * Checkout Form. Card details are only ever entered on iyzico's form.
  */
 define([
@@ -10,7 +10,7 @@ define([
 
     return Component.extend({
         defaults: {
-            template: 'Softaware_IyzicoPayment/payment/iyzico',
+            template: 'CommerceGears_IyzicoPayment/payment/iyzico',
             redirectAfterPlaceOrder: false
         },
 

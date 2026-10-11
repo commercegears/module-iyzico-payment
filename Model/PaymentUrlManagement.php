@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Api\PaymentUrlManagementInterface;
+use CommerceGears\IyzicoPayment\Api\PaymentUrlManagementInterface;
 
 /**
  * The order must belong to the caller (customer token, or the guest cart it was placed from), use iyzico and still

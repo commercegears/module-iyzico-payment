@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\ViewModel;
+namespace CommerceGears\IyzicoPayment\ViewModel;
 
 use Magento\Framework\Data\Form\FormKey;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\View\Asset\Repository as AssetRepository;
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use Softaware\IyzicoPayment\Model\PageState;
+use CommerceGears\IyzicoPayment\Model\PageState;
 
 /**
  * Data for the payment page and the result page (Luma and Hyvä templates).
@@ -69,7 +69,7 @@ class PaymentPage implements ArgumentInterface
 
     public function getCancelUrl(): string
     {
-        return $this->url->getUrl('softaware_iyzico/payment/cancel', ['_secure' => true]);
+        return $this->url->getUrl('commercegears_iyzico/payment/cancel', ['_secure' => true]);
     }
 
     public function getCartUrl(): string
@@ -89,6 +89,6 @@ class PaymentPage implements ArgumentInterface
 
     public function getLogoUrl(): string
     {
-        return $this->assetRepository->getUrlWithParams('Softaware_IyzicoPayment::images/iyzico-band.svg', ['_secure' => true]);
+        return $this->assetRepository->getUrlWithParams('CommerceGears_IyzicoPayment::images/iyzico-band.svg', ['_secure' => true]);
     }
 }

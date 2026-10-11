@@ -1,14 +1,14 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  *
  * Result page (Hyvä) for visitors who are not in the checkout session that placed the order.
  */
 /** @var \Magento\Framework\View\Element\Template $block */
 /** @var \Magento\Framework\Escaper $escaper */
-/** @var \Softaware\IyzicoPayment\ViewModel\PaymentPage $viewModel */
+/** @var \CommerceGears\IyzicoPayment\ViewModel\PaymentPage $viewModel */
 $viewModel = $block->getData('view_model');
 $state = $viewModel->getState();
 $order = $viewModel->getIncrementId();

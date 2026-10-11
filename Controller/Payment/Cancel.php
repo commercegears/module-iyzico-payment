@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Payment;
+namespace CommerceGears\IyzicoPayment\Controller\Payment;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpPostActionInterface;
@@ -14,12 +14,12 @@ use Magento\Framework\App\RequestInterface;
 use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Message\ManagerInterface;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\OrderToken;
-use Softaware\IyzicoPayment\Model\ResultProcessor;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\OrderToken;
+use CommerceGears\IyzicoPayment\Model\ResultProcessor;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * "Cancel payment and return to the basket" on the payment page (POST with form key). The order is cancelled only

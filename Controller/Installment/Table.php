@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Installment;
+namespace CommerceGears\IyzicoPayment\Controller\Installment;
 
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\App\Action\HttpGetActionInterface;
@@ -15,7 +15,7 @@ use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Pricing\PriceCurrencyInterface;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\IyzicoPayment\Model\InstallmentTable;
+use CommerceGears\IyzicoPayment\Model\InstallmentTable;
 
 /**
  * Installment options for a product page (JSON, loaded after the page; the amount is the product's price in this

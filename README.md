@@ -1,6 +1,6 @@
-# Softaware iyzico Payment for Magento 2
+# CommerceGears iyzico Payment for Magento 2
 
-`softaware/module-iyzico-payment` (Magento module `Softaware_IyzicoPayment`)
+`commercegears/module-iyzico-payment` (Magento module `CommerceGears_IyzicoPayment`)
 
 iyzico payments for Magento Open Source and Adobe Commerce, built on iyzico's **Checkout Form**: customers enter
 their card on iyzico's own secure form, so no card data ever reaches the store (PCI SAQ A). Installments,
@@ -83,7 +83,7 @@ Only the API key and the secret key are required. Everything else has a sensible
 - iyzico panel on the order, invoice and credit memo pages: status, payment ID, card, BIN, installments, amount
   charged, installment charge, iyzico fees, refunds made, sandbox badge, attention notes, and a **Check Status at
   iyzico** button (POST + form key, own ACL).
-- Softaware > iyzico > **iyzico Transactions**: every payment form opened and its outcome (order, payment ID,
+- CommerceGears > iyzico > **iyzico Transactions**: every payment form opened and its outcome (order, payment ID,
   amounts, currency, status, fraud check, installments, card, environment, error), filters, CSV export with
   spreadsheet-formula protection.
 - **Test Connection** button and the webhook URL to register, in the payment method settings.
@@ -95,21 +95,21 @@ Only the API key and the secret key are required. Everything else has a sensible
 
 **Headless**
 - REST: after placing the order, get a signed payment page URL (valid 2 hours) for the order:
-  - customer token: `GET /V1/softaware-iyzico/mine/orders/:orderId/payment-url`
-  - guest: `GET /V1/softaware-iyzico/guest-carts/:cartId/orders/:orderId/payment-url` (the masked cart ID the order
+  - customer token: `GET /V1/commercegears-iyzico/mine/orders/:orderId/payment-url`
+  - guest: `GET /V1/commercegears-iyzico/guest-carts/:cartId/orders/:orderId/payment-url` (the masked cart ID the order
     was placed from)
   Other orders answer "not found".
 
 ## Requirements
 
-Magento Open Source / Adobe Commerce 2.4.7 - 2.4.9, PHP 8.2 - 8.5, `softaware/module-core`. Luma and Hyvä
+Magento Open Source / Adobe Commerce 2.4.7 - 2.4.9, PHP 8.2 - 8.5, `commercegears/module-core`. Luma and Hyvä
 storefronts (the checkout itself is Luma or Hyvä's Luma checkout fallback). No iyzico SDK needed.
 
 ## Installation
 
 ```
-composer require softaware/module-iyzico-payment
-bin/magento module:enable Softaware_IyzicoPayment
+composer require commercegears/module-iyzico-payment
+bin/magento module:enable CommerceGears_IyzicoPayment
 bin/magento setup:upgrade
 bin/magento setup:di:compile            # production mode
 bin/magento setup:static-content:deploy # production mode
@@ -121,11 +121,11 @@ Magento cron must run (the lost-payment and fraud-review checks are cron jobs).
 
 1. In the iyzico merchant panel (sandbox: https://sandbox-merchant.iyzipay.com) open Settings > Merchant Settings and
    copy the **API key** and **secret key**.
-2. Stores > Configuration > Sales > Payment Methods > **iyzico (Softaware)** (also linked from Softaware > iyzico >
+2. Stores > Configuration > Sales > Payment Methods > **iyzico (CommerceGears)** (also linked from CommerceGears > iyzico >
    Configuration): set Enabled = Yes, Environment, API key and secret key (website scope possible: each website can
    use its own iyzico account). Save, then press **Test Connection**.
 3. Register the **Merchant Notification URL** shown there in the iyzico panel (Settings > Merchant Settings >
-   Merchant Notifications), e.g. `https://www.example.com/softaware_iyzico/webhook/index`. Use the same URL for
+   Merchant Notifications), e.g. `https://www.example.com/commercegears_iyzico/webhook/index`. Use the same URL for
    fraud review notifications (IFN) if your account has that setting. Ask iyzico (entegrasyon@iyzico.com) to switch
    on signed notifications (X-IYZ-SIGNATURE-V3).
 4. Keep "Cancel Unpaid Orders After" below Magento's Stores > Configuration > Sales > Sales > Orders Cron Settings >
@@ -135,23 +135,23 @@ Magento cron must run (the lost-payment and fraud-review checks are cron jobs).
 
 | Setting | Path | Default | Scope |
 |---|---|---|---|
-| Enabled | `payment/softaware_iyzico/active` | 0 | website |
-| Title | `payment/softaware_iyzico/title` | Credit / Debit Card (iyzico) | store view |
-| Environment | `payment/softaware_iyzico/environment` | sandbox (`sandbox` / `live`) | website |
-| API key (encrypted) | `payment/softaware_iyzico/api_key` | | website |
-| Secret key (encrypted) | `payment/softaware_iyzico/secret_key` | | website |
-| Payment page | `payment/softaware_iyzico/display_mode` | redirect (`redirect` / `iframe`) | store view |
-| Installment options | `payment/softaware_iyzico/installments` | empty = iyzico panel | website |
-| Payment page language | `payment/softaware_iyzico/language` | auto (`auto` / `tr` / `en`) | store view |
-| Installment table on product pages | `payment/softaware_iyzico/installment_table` | 0 | store view |
-| Countries | `payment/softaware_iyzico/allowspecific`, `specificcountry` | all | website |
-| Min / max order total | `payment/softaware_iyzico/min_order_total`, `max_order_total` | none | website |
-| Sort order | `payment/softaware_iyzico/sort_order` | 10 | website |
-| Order status during fraud review | `payment/softaware_iyzico/review_status` | payment_review | website |
-| Cancel unpaid orders after (minutes) | `payment/softaware_iyzico/pending_timeout` | 60 (35 - 10080) | website |
-| T.C. Kimlik No attribute | `payment/softaware_iyzico/identity_attribute` (`customer:<code>` or `address:<code>`) | not mapped | website |
-| Identity number when none is given | `payment/softaware_iyzico/default_identity_number` | 11111111111 | website |
-| Debug log | `payment/softaware_iyzico/debug` | 0 | website |
+| Enabled | `payment/commercegears_iyzico/active` | 0 | website |
+| Title | `payment/commercegears_iyzico/title` | Credit / Debit Card (iyzico) | store view |
+| Environment | `payment/commercegears_iyzico/environment` | sandbox (`sandbox` / `live`) | website |
+| API key (encrypted) | `payment/commercegears_iyzico/api_key` | | website |
+| Secret key (encrypted) | `payment/commercegears_iyzico/secret_key` | | website |
+| Payment page | `payment/commercegears_iyzico/display_mode` | redirect (`redirect` / `iframe`) | store view |
+| Installment options | `payment/commercegears_iyzico/installments` | empty = iyzico panel | website |
+| Payment page language | `payment/commercegears_iyzico/language` | auto (`auto` / `tr` / `en`) | store view |
+| Installment table on product pages | `payment/commercegears_iyzico/installment_table` | 0 | store view |
+| Countries | `payment/commercegears_iyzico/allowspecific`, `specificcountry` | all | website |
+| Min / max order total | `payment/commercegears_iyzico/min_order_total`, `max_order_total` | none | website |
+| Sort order | `payment/commercegears_iyzico/sort_order` | 10 | website |
+| Order status during fraud review | `payment/commercegears_iyzico/review_status` | payment_review | website |
+| Cancel unpaid orders after (minutes) | `payment/commercegears_iyzico/pending_timeout` | 60 (35 - 10080) | website |
+| T.C. Kimlik No attribute | `payment/commercegears_iyzico/identity_attribute` (`customer:<code>` or `address:<code>`) | not mapped | website |
+| Identity number when none is given | `payment/commercegears_iyzico/default_identity_number` | 11111111111 | website |
+| Debug log | `payment/commercegears_iyzico/debug` | 0 | website |
 
 iyzico requires the buyer's identity number. Map the attribute that holds the T.C. Kimlik No in "T.C. Kimlik No
 Attribute": any text attribute of the customer (for example Tax/VAT Number, `customer:taxvat`, which guests can also
@@ -184,14 +184,14 @@ Full list: https://docs.iyzico.com/en/add-ons/test-cards
 ## CLI
 
 ```
-bin/magento softaware:iyzico:check                 # run the scheduled check now (waiting and fraud-review orders)
-bin/magento softaware:iyzico:check 000000123        # ask iyzico about one order and update it
-bin/magento softaware:iyzico:check 000000123 --cancel-unpaid
+bin/magento commercegears:iyzico:check                 # run the scheduled check now (waiting and fraud-review orders)
+bin/magento commercegears:iyzico:check 000000123        # ask iyzico about one order and update it
+bin/magento commercegears:iyzico:check 000000123 --cancel-unpaid
 ```
 
 ## Logs
 
-`var/log/softaware_iyzico.log`: errors and payment events always; full API requests and responses only with
+`var/log/commercegears_iyzico.log`: errors and payment events always; full API requests and responses only with
 "Debug Log" on. API keys, signatures, tokens and payment page URLs are shortened, personal data (name, e-mail,
 phone, identity number, address, IP) is masked. iyzico never sends card numbers to the store.
 

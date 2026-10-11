@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Block\Adminhtml\System;
+namespace CommerceGears\IyzicoPayment\Block\Adminhtml\System;
 
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * Shows the merchant notification (webhook) URL to register in the iyzico merchant panel.

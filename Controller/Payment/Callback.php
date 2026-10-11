@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Payment;
+namespace CommerceGears\IyzicoPayment\Controller\Payment;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\CsrfAwareActionInterface;
@@ -17,11 +17,11 @@ use Magento\Framework\Controller\Result\RedirectFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Escaper;
 use Magento\Framework\View\Asset\Repository as AssetRepository;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * iyzico sends the customer here (POST with the form's token) after the payment, successful or not.
@@ -76,7 +76,7 @@ class Callback implements HttpPostActionInterface, CsrfAwareActionInterface
      */
     private function breakOutOfFrame(string $url): ResultInterface
     {
-        $script = $this->assetRepository->getUrlWithParams('Softaware_IyzicoPayment::js/breakout.js', ['_secure' => true]);
+        $script = $this->assetRepository->getUrlWithParams('CommerceGears_IyzicoPayment::js/breakout.js', ['_secure' => true]);
         $html = '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">'
             . '<meta name="referrer" content="no-referrer"><title>' . $this->escaper->escapeHtml(__('Payment')) . '</title></head>'
             . '<body style="font-family:sans-serif;text-align:center;padding:2em">'

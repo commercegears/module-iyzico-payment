@@ -1,19 +1,19 @@
 {
-    "name": "softaware/module-iyzico-payment",
+    "name": "commercegears/module-iyzico-payment",
     "description": "iyzico payments for Magento 2 (Checkout Form): hosted card entry with installments and 3-D Secure, verified callbacks, signed webhooks, lost-payment recovery, fraud review, online refunds, transactions grid. Luma and Hyvä.",
     "type": "magento2-module",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Softaware Commerce Ltd",
-            "homepage": "https://softawarecommerce.com/"
+            "name": "CommerceGears",
+            "homepage": "https://commercegears.com/"
         }
     ],
     "require": {
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "ext-json": "*",
         "magento/framework": "~103.0.7",
-        "softaware/module-core": "^1.0",
+        "commercegears/module-core": "^2.0",
         "magento/module-backend": "*",
         "magento/module-catalog": "*",
         "magento/module-checkout": "*",
@@ -35,7 +35,10 @@
             "registration.php"
         ],
         "psr-4": {
-            "Softaware\\IyzicoPayment\\": ""
+            "CommerceGears\\IyzicoPayment\\": ""
         }
+    },
+    "replace": {
+        "softaware/module-iyzico-payment": "*"
     }
 }

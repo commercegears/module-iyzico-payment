@@ -1,14 +1,14 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
-use Softaware\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
 
 /**
  * Reads a Checkout Form retrieve / payment detail answer.

@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Observer;
+namespace CommerceGears\IyzicoPayment\Observer;
 
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Event\Observer;
@@ -25,7 +25,7 @@ class RegisterModuleForHyvaConfig implements ObserverInterface
     {
         $config = $observer->getData('config');
         $extensions = $config->hasData('extensions') ? $config->getData('extensions') : [];
-        $path = (string)$this->componentRegistrar->getPath(ComponentRegistrar::MODULE, 'Softaware_IyzicoPayment');
+        $path = (string)$this->componentRegistrar->getPath(ComponentRegistrar::MODULE, 'CommerceGears_IyzicoPayment');
         $extensions[] = ['src' => substr($path, strlen(BP) + 1)];
         $config->setData('extensions', $extensions);
     }

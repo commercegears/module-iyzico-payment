@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Request;
+namespace CommerceGears\IyzicoPayment\Model\Request;
 
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Model\Logger as CustomerLogger;
@@ -14,8 +14,8 @@ use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Sales\Api\Data\OrderAddressInterface;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\PaymentInfo;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\PaymentInfo;
 
 /**
  * Checkout Form initialize request for an order (docs: CF-Initialize).

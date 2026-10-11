@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Webhook;
+namespace CommerceGears\IyzicoPayment\Controller\Webhook;
 
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\App\CsrfAwareActionInterface;
@@ -17,13 +17,13 @@ use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\OrderFactory;
-use Softaware\IyzicoPayment\Model\Api\Signature;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\LockBusyException;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\Api\Signature;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\LockBusyException;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
 
 /**
  * iyzico merchant notifications (webhook) and fraud review notifications, server to server (JSON POST).

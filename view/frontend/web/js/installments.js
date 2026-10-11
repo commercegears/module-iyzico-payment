@@ -1,5 +1,5 @@
 /**
- * Softaware_IyzicoPayment: fills the product page "Installment options" table (Luma and Hyvä, no dependencies).
+ * CommerceGears_IyzicoPayment: fills the product page "Installment options" table (Luma and Hyvä, no dependencies).
  * Builds the table with textContent only.
  */
 (function () {
@@ -47,7 +47,7 @@
     }
 
     function init() {
-        document.querySelectorAll('.softaware-iyzico-installments[data-url], [data-iyzico-installments][data-url]').forEach(function (box) {
+        document.querySelectorAll('.commercegears-iyzico-installments[data-url], [data-iyzico-installments][data-url]').forEach(function (box) {
             if (box.getAttribute('data-loaded')) { return; }
             box.setAttribute('data-loaded', '1');
             fetch(box.getAttribute('data-url'), {credentials: 'same-origin', headers: {'Accept': 'application/json'}})

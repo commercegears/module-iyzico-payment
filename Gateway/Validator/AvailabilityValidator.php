@@ -1,19 +1,19 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Gateway\Validator;
+namespace CommerceGears\IyzicoPayment\Gateway\Validator;
 
 use Magento\Payment\Gateway\Helper\SubjectReader;
 use Magento\Payment\Gateway\Validator\AbstractValidator;
 use Magento\Payment\Gateway\Validator\ResultInterface;
 use Magento\Payment\Gateway\Validator\ResultInterfaceFactory;
 use Magento\Quote\Api\Data\CartInterface;
-use Softaware\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Config;
 
 /**
  * Offers iyzico only when the keys are set, the basket's currency is one iyzico accepts and there is something to

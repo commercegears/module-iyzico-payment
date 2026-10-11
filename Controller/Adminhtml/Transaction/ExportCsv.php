@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Adminhtml\Transaction;
+namespace CommerceGears\IyzicoPayment\Controller\Adminhtml\Transaction;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -23,8 +23,8 @@ use Magento\Ui\Model\Export\ConvertToCsv;
  */
 class ExportCsv extends Action implements HttpGetActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_IyzicoPayment::transactions';
-    public const NAMESPACE = 'softaware_iyzico_transaction_listing';
+    public const ADMIN_RESOURCE = 'CommerceGears_IyzicoPayment::transactions';
+    public const NAMESPACE = 'commercegears_iyzico_transaction_listing';
 
     public function __construct(
         Context $context,

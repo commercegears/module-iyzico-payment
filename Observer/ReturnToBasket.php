@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Observer;
+namespace CommerceGears\IyzicoPayment\Observer;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\ActionFlag;
@@ -17,13 +17,13 @@ use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Message\ManagerInterface;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\ResultProcessor;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\ResultProcessor;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * The customer left iyzico's page (back button, closed the form) and opened the basket or checkout while their

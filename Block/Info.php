@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Block;
+namespace CommerceGears\IyzicoPayment\Block;
 
 use Magento\Framework\App\Area;
 use Magento\Framework\AuthorizationInterface;
@@ -14,7 +14,7 @@ use Magento\Framework\Data\Form\FormKey;
 use Magento\Framework\View\Element\Template\Context;
 use Magento\Payment\Block\Info as BaseInfo;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\PaymentInfo;
+use CommerceGears\IyzicoPayment\Model\PaymentInfo;
 
 /**
  * Payment information: card, installments and payment ID for customers (account, e-mails, PDFs); the full iyzico
@@ -39,7 +39,7 @@ class Info extends BaseInfo
     {
         $template = parent::getTemplate();
         if ($template === 'Magento_Payment::info/default.phtml' && $this->getArea() === Area::AREA_ADMINHTML) {
-            return 'Softaware_IyzicoPayment::info/admin.phtml';
+            return 'CommerceGears_IyzicoPayment::info/admin.phtml';
         }
         return $template;
     }
@@ -121,17 +121,17 @@ class Info extends BaseInfo
         $order = $this->getOrder();
         return $order
             && in_array($order->getState(), [Order::STATE_PENDING_PAYMENT, Order::STATE_NEW, Order::STATE_PAYMENT_REVIEW], true)
-            && $this->authorization->isAllowed('Softaware_IyzicoPayment::check_status');
+            && $this->authorization->isAllowed('CommerceGears_IyzicoPayment::check_status');
     }
 
     public function getCheckStatusUrl(): string
     {
-        return $this->getUrl('softaware_iyzico/order/checkStatus', ['order_id' => (int)$this->getOrder()?->getId()]);
+        return $this->getUrl('commercegears_iyzico/order/checkStatus', ['order_id' => (int)$this->getOrder()?->getId()]);
     }
 
     public function getTransactionsUrl(): string
     {
-        return $this->getUrl('softaware_iyzico/transaction/index');
+        return $this->getUrl('commercegears_iyzico/transaction/index');
     }
 
     public function getFormKey(): string
@@ -161,10 +161,10 @@ class Info extends BaseInfo
     public function getIdentityText(): string
     {
         return match ($this->getValue(PaymentInfo::IDENTITY_SOURCE)) {
-            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_MAPPED => (string)__('From the mapped attribute'),
-            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_EMPTY
+            \CommerceGears\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_MAPPED => (string)__('From the mapped attribute'),
+            \CommerceGears\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_EMPTY
                 => (string)__('Default number sent (the mapped attribute was empty or not a valid T.C. Kimlik No)'),
-            \Softaware\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_NOT_MAPPED
+            \CommerceGears\IyzicoPayment\Model\Request\IdentityNumber::SOURCE_NOT_MAPPED
                 => (string)__('Default number sent (no T.C. Kimlik No attribute is mapped)'),
             default => '',
         };

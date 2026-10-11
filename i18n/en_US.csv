@@ -145,7 +145,7 @@ Test mode: no real payment is taken.,Test mode: no real payment is taken.
 Continue to Payment,Continue to Payment
 iyzico,iyzico
 Configuration,Configuration
-iyzico (Softaware),iyzico (Softaware)
+iyzico (CommerceGears),iyzico (CommerceGears)
 Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.,Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.
 Enabled,Enabled
 Title,Title
@@ -174,7 +174,7 @@ Orders still waiting for payment are checked with iyzico after this time and can
 Identity Number When None Is Given,Identity Number When None Is Given
 iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.,iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.
 Debug Log,Debug Log
-"Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged."
+"Writes API requests and responses to var/log/commercegears_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","Writes API requests and responses to var/log/commercegears_iyzico.log with keys, tokens and personal data masked. Errors are always logged."
 ID,ID
 Date,Date
 Order,Order

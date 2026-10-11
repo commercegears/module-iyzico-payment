@@ -1,5 +1,5 @@
 /**
- * Softaware_IyzicoPayment: after a payment in the frame, load the result page in the whole window.
+ * CommerceGears_IyzicoPayment: after a payment in the frame, load the result page in the whole window.
  */
 (function () {
     'use strict';

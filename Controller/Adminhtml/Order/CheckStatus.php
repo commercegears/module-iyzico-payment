@@ -1,23 +1,23 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Adminhtml\Order;
+namespace CommerceGears\IyzicoPayment\Controller\Adminhtml\Order;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\LockBusyException;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\ResultProcessor;
-use Softaware\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\LockBusyException;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\ResultProcessor;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
 
 /**
  * "Check Status at iyzico" on the order page (POST + form key): asks iyzico now and updates the order the same way
@@ -25,7 +25,7 @@ use Softaware\IyzicoPayment\Model\StatusChecker;
  */
 class CheckStatus extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_IyzicoPayment::check_status';
+    public const ADMIN_RESOURCE = 'CommerceGears_IyzicoPayment::check_status';
 
     public function __construct(
         Context $context,

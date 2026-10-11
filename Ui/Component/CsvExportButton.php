@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Ui\Component;
+namespace CommerceGears\IyzicoPayment\Ui\Component;
 
 use Magento\Ui\Component\ExportButton;
 
@@ -22,7 +22,7 @@ class CsvExportButton extends ExportButton
             'csv' => [
                 'value' => 'csv',
                 'label' => __('CSV'),
-                'url' => 'softaware_iyzico/transaction/exportCsv',
+                'url' => 'commercegears_iyzico/transaction/exportCsv',
             ],
         ];
         $this->setData('config', $config);

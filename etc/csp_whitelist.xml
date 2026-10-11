@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  *
  * iyzico's payment page shown in a frame ("On this store's page"). No iyzico script runs on the store's own pages.
  */
@@ -12,8 +12,8 @@
     <policies>
         <policy id="frame-src">
             <values>
-                <value id="softaware_iyzico_cpp" type="host">https://cpp.iyzipay.com</value>
-                <value id="softaware_iyzico_sandbox_cpp" type="host">https://sandbox-cpp.iyzipay.com</value>
+                <value id="commercegears_iyzico_cpp" type="host">https://cpp.iyzipay.com</value>
+                <value id="commercegears_iyzico_sandbox_cpp" type="host">https://sandbox-cpp.iyzipay.com</value>
             </values>
         </policy>
     </policies>

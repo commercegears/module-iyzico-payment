@@ -1,5 +1,5 @@
 /**
- * Softaware_IyzicoPayment: registers the iyzico renderer in the checkout.
+ * CommerceGears_IyzicoPayment: registers the iyzico renderer in the checkout.
  */
 define([
     'uiComponent',
@@ -8,8 +8,8 @@ define([
     'use strict';
 
     rendererList.push({
-        type: 'softaware_iyzico',
-        component: 'Softaware_IyzicoPayment/js/view/payment/method-renderer/iyzico'
+        type: 'commercegears_iyzico',
+        component: 'CommerceGears_IyzicoPayment/js/view/payment/method-renderer/iyzico'
     });
 
     return Component.extend({});

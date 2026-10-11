@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Block\Adminhtml\System;
+namespace CommerceGears\IyzicoPayment\Block\Adminhtml\System;
 
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
@@ -16,7 +16,7 @@ use Magento\Framework\Data\Form\Element\AbstractElement;
  */
 class TestConnection extends Field
 {
-    protected $_template = 'Softaware_IyzicoPayment::system/test_connection.phtml';
+    protected $_template = 'CommerceGears_IyzicoPayment::system/test_connection.phtml';
 
     public function render(AbstractElement $element)
     {
@@ -38,6 +38,6 @@ class TestConnection extends Field
                 $params[$scope] = $value;
             }
         }
-        return $this->getUrl('softaware_iyzico/system/testConnection', $params);
+        return $this->getUrl('commercegears_iyzico/system/testConnection', $params);
     }
 }

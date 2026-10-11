@@ -1,16 +1,16 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\ResourceModel\Transaction;
+namespace CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction;
 
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
-use Softaware\IyzicoPayment\Model\ResourceModel\Transaction as Resource;
-use Softaware\IyzicoPayment\Model\Transaction;
+use CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction as Resource;
+use CommerceGears\IyzicoPayment\Model\Transaction;
 
 class Collection extends AbstractCollection
 {

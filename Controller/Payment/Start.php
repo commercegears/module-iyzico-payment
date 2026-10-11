@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Payment;
+namespace CommerceGears\IyzicoPayment\Controller\Payment;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\App\Action\HttpGetActionInterface;
@@ -17,20 +17,20 @@ use Magento\Framework\Message\ManagerInterface;
 use Magento\Framework\Pricing\PriceCurrencyInterface;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\LockBusyException;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderCanceller;
-use Softaware\IyzicoPayment\Model\OrderLock;
-use Softaware\IyzicoPayment\Model\OrderToken;
-use Softaware\IyzicoPayment\Model\PageState;
-use Softaware\IyzicoPayment\Model\PaymentStarter;
-use Softaware\IyzicoPayment\Model\PaymentStartException;
-use Softaware\IyzicoPayment\Model\ResultProcessor;
-use Softaware\IyzicoPayment\Model\StatusChecker;
-use Softaware\IyzicoPayment\Model\Transaction;
-use Softaware\IyzicoPayment\Model\UrlProvider;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\LockBusyException;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderCanceller;
+use CommerceGears\IyzicoPayment\Model\OrderLock;
+use CommerceGears\IyzicoPayment\Model\OrderToken;
+use CommerceGears\IyzicoPayment\Model\PageState;
+use CommerceGears\IyzicoPayment\Model\PaymentStarter;
+use CommerceGears\IyzicoPayment\Model\PaymentStartException;
+use CommerceGears\IyzicoPayment\Model\ResultProcessor;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\Transaction;
+use CommerceGears\IyzicoPayment\Model\UrlProvider;
 
 /**
  * Payment page: opens (or reuses) iyzico's Checkout Form for the order this visitor just placed, then redirects to
@@ -138,7 +138,7 @@ class Start implements HttpGetActionInterface
             ),
             'frame_url' => $frameUrl,
             'order_token' => $token,
-            'retry_url' => $this->urlProvider->url((int)$order->getStoreId(), 'softaware_iyzico/payment/start', $token !== '' ? ['_query' => ['t' => $token]] : []),
+            'retry_url' => $this->urlProvider->url((int)$order->getStoreId(), 'commercegears_iyzico/payment/start', $token !== '' ? ['_query' => ['t' => $token]] : []),
         ]);
         $page = $this->pageFactory->create();
         $page->getConfig()->getTitle()->set(__('Secure Payment'));

@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\ResourceModel;
+namespace CommerceGears\IyzicoPayment\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
@@ -16,6 +16,6 @@ class Transaction extends AbstractDb
 
     protected function _construct()
     {
-        $this->_init('softaware_iyzico_transaction', 'entity_id');
+        $this->_init('commercegears_iyzico_transaction', 'entity_id');
     }
 }

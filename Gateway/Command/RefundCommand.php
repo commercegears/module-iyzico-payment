@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Gateway\Command;
+namespace CommerceGears\IyzicoPayment\Gateway\Command;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Stdlib\DateTime\DateTime;
@@ -14,13 +14,13 @@ use Magento\Payment\Gateway\CommandInterface;
 use Magento\Payment\Gateway\Helper\SubjectReader;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Payment;
-use Softaware\IyzicoPayment\Model\Amount;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Api\Client;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\PaymentInfo;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\Amount;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\PaymentInfo;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
 
 /**
  * Online refund from a credit memo (full, partial, several partial refunds; shipping and adjustments included).

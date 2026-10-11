@@ -145,7 +145,7 @@ Test mode: no real payment is taken.,Test modu: gerçek bir ödeme alınmaz.
 Continue to Payment,Ödemeye Geç
 iyzico,iyzico
 Configuration,Yapılandırma
-iyzico (Softaware),iyzico (Softaware)
+iyzico (CommerceGears),iyzico (CommerceGears)
 Customers pay on iyzico's secure Checkout Form (card details never reach this store). Only the API key and secret key are required; everything else has a sensible default. Keys are in the iyzico merchant panel under Settings &gt; Merchant Settings.,Müşteriler iyzico'nun güvenli ödeme formunda öder (kart bilgileri bu mağazaya hiçbir zaman ulaşmaz). Yalnızca API anahtarı ve gizli anahtar gereklidir; diğer tüm ayarların uygun varsayılan değerleri vardır. Anahtarlar iyzico üye işyeri panelinde Ayarlar &gt; Firma Ayarları bölümündedir.
 Enabled,Etkin
 Title,Başlık
@@ -174,7 +174,7 @@ Orders still waiting for payment are checked with iyzico after this time and can
 Identity Number When None Is Given,Kimlik Numarası Girilmediğinde Kullanılacak Değer
 iyzico requires an identity number. A valid T.C. Kimlik No from the customer's tax/VAT number field is sent when there is one; otherwise this value.,iyzico kimlik numarası ister. Müşterinin vergi numarası alanında geçerli bir T.C. Kimlik No varsa o gönderilir; yoksa bu değer.
 Debug Log,Hata Ayıklama Kaydı
-"Writes API requests and responses to var/log/softaware_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","API isteklerini ve yanıtlarını anahtarlar, token'lar ve kişisel veriler maskelenmiş olarak var/log/softaware_iyzico.log dosyasına yazar. Hatalar her zaman kaydedilir."
+"Writes API requests and responses to var/log/commercegears_iyzico.log with keys, tokens and personal data masked. Errors are always logged.","API isteklerini ve yanıtlarını anahtarlar, token'lar ve kişisel veriler maskelenmiş olarak var/log/commercegears_iyzico.log dosyasına yazar. Hatalar her zaman kaydedilir."
 ID,ID
 Date,Tarih
 Order,Sipariş

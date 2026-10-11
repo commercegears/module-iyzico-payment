@@ -1,19 +1,19 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\Phrase;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Email\Sender\OrderSender;
-use Softaware\IyzicoPayment\Model\Api\Signature;
+use CommerceGears\IyzicoPayment\Model\Api\Signature;
 
 /**
  * Applies an answer from iyzico (Checkout Form retrieve or payment detail, always fetched by us from the API,

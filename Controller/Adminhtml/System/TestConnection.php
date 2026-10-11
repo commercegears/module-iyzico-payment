@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Controller\Adminhtml\System;
+namespace CommerceGears\IyzicoPayment\Controller\Adminhtml\System;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -14,16 +14,16 @@ use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Api\Client;
-use Softaware\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Config;
 
 /**
  * Tests the saved keys with a harmless call (installment rates for an amount of 100, no card number).
  */
 class TestConnection extends Action implements HttpPostActionInterface
 {
-    public const ADMIN_RESOURCE = 'Softaware_IyzicoPayment::config';
+    public const ADMIN_RESOURCE = 'CommerceGears_IyzicoPayment::config';
 
     public function __construct(
         Context $context,

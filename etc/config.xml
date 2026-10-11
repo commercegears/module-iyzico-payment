@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
-            <softaware_iyzico>
+            <commercegears_iyzico>
                 <active>0</active>
-                <model>SoftawareIyzicoFacade</model>
+                <model>CommerceGearsIyzicoFacade</model>
                 <title>Credit / Debit Card (iyzico)</title>
                 <environment>sandbox</environment>
                 <api_key backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
@@ -44,7 +44,7 @@
                 <can_use_for_multishipping>0</can_use_for_multishipping>
                 <can_save_cc>0</can_save_cc>
                 <is_offline>0</is_offline>
-            </softaware_iyzico>
+            </commercegears_iyzico>
         </payment>
     </default>
 </config>

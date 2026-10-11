@@ -1,113 +1,113 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Softaware\IyzicoPayment\Api\PaymentUrlManagementInterface" type="Softaware\IyzicoPayment\Model\PaymentUrlManagement"/>
+    <preference for="CommerceGears\IyzicoPayment\Api\PaymentUrlManagementInterface" type="CommerceGears\IyzicoPayment\Model\PaymentUrlManagement"/>
 
     <!-- Payment method (Magento payment gateway adapter) -->
-    <virtualType name="SoftawareIyzicoFacade" type="Magento\Payment\Model\Method\Adapter">
+    <virtualType name="CommerceGearsIyzicoFacade" type="Magento\Payment\Model\Method\Adapter">
         <arguments>
-            <argument name="code" xsi:type="const">Softaware\IyzicoPayment\Model\Config::METHOD_CODE</argument>
+            <argument name="code" xsi:type="const">CommerceGears\IyzicoPayment\Model\Config::METHOD_CODE</argument>
             <argument name="formBlockType" xsi:type="string">Magento\Payment\Block\Form</argument>
-            <argument name="infoBlockType" xsi:type="string">Softaware\IyzicoPayment\Block\Info</argument>
-            <argument name="valueHandlerPool" xsi:type="object">SoftawareIyzicoValueHandlerPool</argument>
-            <argument name="validatorPool" xsi:type="object">SoftawareIyzicoValidatorPool</argument>
-            <argument name="commandPool" xsi:type="object">SoftawareIyzicoCommandPool</argument>
+            <argument name="infoBlockType" xsi:type="string">CommerceGears\IyzicoPayment\Block\Info</argument>
+            <argument name="valueHandlerPool" xsi:type="object">CommerceGearsIyzicoValueHandlerPool</argument>
+            <argument name="validatorPool" xsi:type="object">CommerceGearsIyzicoValidatorPool</argument>
+            <argument name="commandPool" xsi:type="object">CommerceGearsIyzicoCommandPool</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoGatewayConfig" type="Magento\Payment\Gateway\Config\Config">
+    <virtualType name="CommerceGearsIyzicoGatewayConfig" type="Magento\Payment\Gateway\Config\Config">
         <arguments>
-            <argument name="methodCode" xsi:type="const">Softaware\IyzicoPayment\Model\Config::METHOD_CODE</argument>
+            <argument name="methodCode" xsi:type="const">CommerceGears\IyzicoPayment\Model\Config::METHOD_CODE</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
+    <virtualType name="CommerceGearsIyzicoConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
         <arguments>
-            <argument name="configInterface" xsi:type="object">SoftawareIyzicoGatewayConfig</argument>
+            <argument name="configInterface" xsi:type="object">CommerceGearsIyzicoGatewayConfig</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
+    <virtualType name="CommerceGearsIyzicoValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
         <arguments>
             <argument name="handlers" xsi:type="array">
-                <item name="default" xsi:type="string">SoftawareIyzicoConfigValueHandler</item>
+                <item name="default" xsi:type="string">CommerceGearsIyzicoConfigValueHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
+    <virtualType name="CommerceGearsIyzicoCountryValidator" type="Magento\Payment\Gateway\Validator\CountryValidator">
         <arguments>
-            <argument name="config" xsi:type="object">SoftawareIyzicoGatewayConfig</argument>
+            <argument name="config" xsi:type="object">CommerceGearsIyzicoGatewayConfig</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+    <virtualType name="CommerceGearsIyzicoValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
         <arguments>
             <argument name="validators" xsi:type="array">
-                <item name="country" xsi:type="string">SoftawareIyzicoCountryValidator</item>
-                <item name="availability" xsi:type="string">Softaware\IyzicoPayment\Gateway\Validator\AvailabilityValidator</item>
+                <item name="country" xsi:type="string">CommerceGearsIyzicoCountryValidator</item>
+                <item name="availability" xsi:type="string">CommerceGears\IyzicoPayment\Gateway\Validator\AvailabilityValidator</item>
             </argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
+    <virtualType name="CommerceGearsIyzicoCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="initialize" xsi:type="string">Softaware\IyzicoPayment\Gateway\Command\InitializeCommand</item>
-                <item name="refund" xsi:type="string">Softaware\IyzicoPayment\Gateway\Command\RefundCommand</item>
+                <item name="initialize" xsi:type="string">CommerceGears\IyzicoPayment\Gateway\Command\InitializeCommand</item>
+                <item name="refund" xsi:type="string">CommerceGears\IyzicoPayment\Gateway\Command\RefundCommand</item>
             </argument>
         </arguments>
     </virtualType>
 
-    <!-- Log file var/log/softaware_iyzico.log -->
-    <virtualType name="SoftawareIyzicoLogHandler" type="Magento\Framework\Logger\Handler\Base">
+    <!-- Log file var/log/commercegears_iyzico.log -->
+    <virtualType name="CommerceGearsIyzicoLogHandler" type="Magento\Framework\Logger\Handler\Base">
         <arguments>
-            <argument name="fileName" xsi:type="string">/var/log/softaware_iyzico.log</argument>
+            <argument name="fileName" xsi:type="string">/var/log/commercegears_iyzico.log</argument>
         </arguments>
     </virtualType>
-    <virtualType name="SoftawareIyzicoLogger" type="Monolog\Logger">
+    <virtualType name="CommerceGearsIyzicoLogger" type="Monolog\Logger">
         <arguments>
-            <argument name="name" xsi:type="string">softaware_iyzico</argument>
+            <argument name="name" xsi:type="string">commercegears_iyzico</argument>
             <argument name="handlers" xsi:type="array">
-                <item name="file" xsi:type="object">SoftawareIyzicoLogHandler</item>
+                <item name="file" xsi:type="object">CommerceGearsIyzicoLogHandler</item>
             </argument>
         </arguments>
     </virtualType>
-    <type name="Softaware\IyzicoPayment\Model\Log">
+    <type name="CommerceGears\IyzicoPayment\Model\Log">
         <arguments>
-            <argument name="logger" xsi:type="object">SoftawareIyzicoLogger</argument>
+            <argument name="logger" xsi:type="object">CommerceGearsIyzicoLogger</argument>
         </arguments>
     </type>
 
     <!-- Storefront URLs are built with the frontend URL model in every area (cron, admin, REST) -->
-    <virtualType name="SoftawareIyzicoFrontendUrlFactory" type="Magento\Framework\UrlFactory">
+    <virtualType name="CommerceGearsIyzicoFrontendUrlFactory" type="Magento\Framework\UrlFactory">
         <arguments>
             <argument name="instanceName" xsi:type="string">Magento\Framework\Url</argument>
         </arguments>
     </virtualType>
-    <type name="Softaware\IyzicoPayment\Model\UrlProvider">
+    <type name="CommerceGears\IyzicoPayment\Model\UrlProvider">
         <arguments>
-            <argument name="urlFactory" xsi:type="object">SoftawareIyzicoFrontendUrlFactory</argument>
+            <argument name="urlFactory" xsi:type="object">CommerceGearsIyzicoFrontendUrlFactory</argument>
         </arguments>
     </type>
 
     <!-- iyzico posts to the callback cross-site: no session there, so the customer's session cookie survives -->
     <type name="Magento\Framework\Session\SessionStartChecker">
-        <plugin name="softaware_iyzico_no_session_on_callback" type="Softaware\IyzicoPayment\Plugin\NoSessionOnCallback"/>
+        <plugin name="commercegears_iyzico_no_session_on_callback" type="CommerceGears\IyzicoPayment\Plugin\NoSessionOnCallback"/>
     </type>
 
     <!-- Admin grid -->
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="softaware_iyzico_transaction_listing_data_source" xsi:type="string">Softaware\IyzicoPayment\Model\ResourceModel\Transaction\Grid\Collection</item>
+                <item name="commercegears_iyzico_transaction_listing_data_source" xsi:type="string">CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
-    <virtualType name="Softaware\IyzicoPayment\Model\ResourceModel\Transaction\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
-            <argument name="mainTable" xsi:type="string">softaware_iyzico_transaction</argument>
-            <argument name="resourceModel" xsi:type="string">Softaware\IyzicoPayment\Model\ResourceModel\Transaction</argument>
+            <argument name="mainTable" xsi:type="string">commercegears_iyzico_transaction</argument>
+            <argument name="resourceModel" xsi:type="string">CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction</argument>
             <argument name="identifierName" xsi:type="string">entity_id</argument>
         </arguments>
     </virtualType>
@@ -116,14 +116,14 @@
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="softaware_iyzico_check" xsi:type="object">Softaware\IyzicoPayment\Console\Command\CheckCommand</item>
+                <item name="commercegears_iyzico_check" xsi:type="object">CommerceGears\IyzicoPayment\Console\Command\CheckCommand</item>
             </argument>
         </arguments>
     </type>
-    <type name="Softaware\IyzicoPayment\Console\Command\CheckCommand">
+    <type name="CommerceGears\IyzicoPayment\Console\Command\CheckCommand">
         <arguments>
-            <argument name="checker" xsi:type="object">Softaware\IyzicoPayment\Model\OrderStatusService\Proxy</argument>
-            <argument name="cron" xsi:type="object">Softaware\IyzicoPayment\Cron\CheckPendingPayments\Proxy</argument>
+            <argument name="checker" xsi:type="object">CommerceGears\IyzicoPayment\Model\OrderStatusService\Proxy</argument>
+            <argument name="cron" xsi:type="object">CommerceGears\IyzicoPayment\Cron\CheckPendingPayments\Proxy</argument>
         </arguments>
     </type>
 
@@ -131,11 +131,11 @@
     <type name="Magento\Config\Model\Config\TypePool">
         <arguments>
             <argument name="sensitive" xsi:type="array">
-                <item name="payment/softaware_iyzico/api_key" xsi:type="string">1</item>
-                <item name="payment/softaware_iyzico/secret_key" xsi:type="string">1</item>
+                <item name="payment/commercegears_iyzico/api_key" xsi:type="string">1</item>
+                <item name="payment/commercegears_iyzico/secret_key" xsi:type="string">1</item>
             </argument>
             <argument name="environment" xsi:type="array">
-                <item name="payment/softaware_iyzico/environment" xsi:type="string">1</item>
+                <item name="payment/commercegears_iyzico/environment" xsi:type="string">1</item>
             </argument>
         </arguments>
     </type>

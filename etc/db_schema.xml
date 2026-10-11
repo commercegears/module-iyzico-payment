@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
-    <table name="softaware_iyzico_transaction" resource="sales" engine="innodb" comment="iyzico Checkout Form payments, one row per payment form opened">
+    <table name="commercegears_iyzico_transaction" resource="sales" engine="innodb" comment="iyzico Checkout Form payments, one row per payment form opened">
         <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="true" comment="ID"/>
         <column xsi:type="int" name="order_id" unsigned="true" nullable="false" comment="Order ID"/>
         <column xsi:type="varchar" name="increment_id" length="50" nullable="false" comment="Order Number"/>
@@ -38,22 +38,22 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="entity_id"/>
         </constraint>
-        <constraint xsi:type="unique" referenceId="SOFTAWARE_IYZICO_TRANSACTION_TOKEN">
+        <constraint xsi:type="unique" referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_TOKEN">
             <column name="token"/>
         </constraint>
-        <constraint xsi:type="foreign" referenceId="SOFTAWARE_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID"
-                    table="softaware_iyzico_transaction" column="order_id" referenceTable="sales_order"
+        <constraint xsi:type="foreign" referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_ORDER_ID_SALES_ORDER_ENTITY_ID"
+                    table="commercegears_iyzico_transaction" column="order_id" referenceTable="sales_order"
                     referenceColumn="entity_id" onDelete="CASCADE"/>
-        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_PAYMENT_ID" indexType="btree">
+        <index referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_PAYMENT_ID" indexType="btree">
             <column name="payment_id"/>
         </index>
-        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_INCREMENT_ID" indexType="btree">
+        <index referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_INCREMENT_ID" indexType="btree">
             <column name="increment_id"/>
         </index>
-        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_STATUS" indexType="btree">
+        <index referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_STATUS" indexType="btree">
             <column name="status"/>
         </index>
-        <index referenceId="SOFTAWARE_IYZICO_TRANSACTION_CREATED_AT" indexType="btree">
+        <index referenceId="COMMERCEGEARS_IYZICO_TRANSACTION_CREATED_AT" indexType="btree">
             <column name="created_at"/>
         </index>
     </table>

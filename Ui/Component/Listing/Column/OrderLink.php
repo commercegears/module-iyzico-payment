@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Ui\Component\Listing\Column;
+namespace CommerceGears\IyzicoPayment\Ui\Component\Listing\Column;
 
 use Magento\Framework\Escaper;
 use Magento\Framework\UrlInterface;

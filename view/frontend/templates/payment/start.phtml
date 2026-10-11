@@ -1,30 +1,30 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  *
  * Payment page (Luma): iyzico's form in a frame, or an error with "Try again".
  */
 /** @var \Magento\Framework\View\Element\Template $block */
 /** @var \Magento\Framework\Escaper $escaper */
-/** @var \Softaware\IyzicoPayment\ViewModel\PaymentPage $viewModel */
+/** @var \CommerceGears\IyzicoPayment\ViewModel\PaymentPage $viewModel */
 $viewModel = $block->getData('view_model');
 $state = $viewModel->getState();
 ?>
-<div class="softaware-iyzico-page">
-    <p class="softaware-iyzico-summary">
+<div class="commercegears-iyzico-page">
+    <p class="commercegears-iyzico-summary">
         <span><?= $escaper->escapeHtml(__('Order #%1', $viewModel->getIncrementId())) ?></span>
-        <span class="softaware-iyzico-amount"><?= $escaper->escapeHtml(__('Amount to pay: %1', $viewModel->getAmount())) ?></span>
+        <span class="commercegears-iyzico-amount"><?= $escaper->escapeHtml(__('Amount to pay: %1', $viewModel->getAmount())) ?></span>
     </p>
     <?php if ($state === 'frame'): ?>
-        <div class="softaware-iyzico-frame-wrap">
-            <iframe class="softaware-iyzico-frame"
+        <div class="commercegears-iyzico-frame-wrap">
+            <iframe class="commercegears-iyzico-frame"
                     src="<?= $escaper->escapeUrl($viewModel->getFrameUrl()) ?>"
                     title="<?= $escaper->escapeHtmlAttr(__('iyzico secure payment form')) ?>"
                     allow="payment"></iframe>
         </div>
-        <p class="softaware-iyzico-hint"><?= $escaper->escapeHtml(__('Your card details are entered on iyzico\'s secure form and never reach this store.')) ?></p>
+        <p class="commercegears-iyzico-hint"><?= $escaper->escapeHtml(__('Your card details are entered on iyzico\'s secure form and never reach this store.')) ?></p>
     <?php else: ?>
         <div class="message error">
             <div><?= $escaper->escapeHtml(__('iyzico cannot be reached at the moment. Your order is saved and nothing has been charged. Please try again in a moment.')) ?></div>
@@ -35,12 +35,12 @@ $state = $viewModel->getState();
             </div>
         </div>
     <?php endif; ?>
-    <form class="softaware-iyzico-cancel" method="post" action="<?= $escaper->escapeUrl($viewModel->getCancelUrl()) ?>">
+    <form class="commercegears-iyzico-cancel" method="post" action="<?= $escaper->escapeUrl($viewModel->getCancelUrl()) ?>">
         <input type="hidden" name="form_key" value="<?= $escaper->escapeHtmlAttr($viewModel->getFormKey()) ?>"/>
         <?php if ($viewModel->getOrderToken() !== ''): ?>
             <input type="hidden" name="t" value="<?= $escaper->escapeHtmlAttr($viewModel->getOrderToken()) ?>"/>
         <?php endif; ?>
         <button type="submit" class="action secondary"><span><?= $escaper->escapeHtml(__('Cancel Payment and Return to Basket')) ?></span></button>
     </form>
-    <img class="softaware-iyzico-logos" src="<?= $escaper->escapeUrl($viewModel->getLogoUrl()) ?>" alt="<?= $escaper->escapeHtmlAttr(__('iyzico ile Öde, Mastercard, Visa, American Express, Troy')) ?>" width="300" height="22" loading="lazy"/>
+    <img class="commercegears-iyzico-logos" src="<?= $escaper->escapeUrl($viewModel->getLogoUrl()) ?>" alt="<?= $escaper->escapeHtmlAttr(__('iyzico ile Öde, Mastercard, Visa, American Express, Troy')) ?>" width="300" height="22" loading="lazy"/>
 </div>

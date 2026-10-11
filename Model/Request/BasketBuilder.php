@@ -1,16 +1,16 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Request;
+namespace CommerceGears\IyzicoPayment\Model\Request;
 
 use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Sales\Model\Order\Item;
-use Softaware\IyzicoPayment\Model\Amount;
+use CommerceGears\IyzicoPayment\Model\Amount;
 
 /**
  * Builds iyzico basket items from an order, in the order currency, summing exactly to the order's grand total.

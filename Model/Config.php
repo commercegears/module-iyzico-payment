@@ -1,26 +1,26 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Encryption\EncryptorInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Typed access to Stores > Configuration > Sales > Payment Methods > iyzico (payment/softaware_iyzico/*).
+ * Typed access to Stores > Configuration > Sales > Payment Methods > iyzico (payment/commercegears_iyzico/*).
  *
  * All values are read in the scope of the order's (or quote's) store, so websites can use their own iyzico
  * merchant account and environment.
  */
 class Config
 {
-    public const METHOD_CODE = 'softaware_iyzico';
+    public const METHOD_CODE = 'commercegears_iyzico';
     private const PREFIX = 'payment/' . self::METHOD_CODE . '/';
 
     public const ENV_SANDBOX = 'sandbox';

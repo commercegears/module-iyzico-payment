@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\UrlFactory;
 
@@ -23,12 +23,12 @@ class UrlProvider
 
     public function getCallbackUrl(int $storeId): string
     {
-        return $this->url($storeId, 'softaware_iyzico/payment/callback');
+        return $this->url($storeId, 'commercegears_iyzico/payment/callback');
     }
 
     public function getWebhookUrl(int $storeId): string
     {
-        return $this->url($storeId, 'softaware_iyzico/webhook/index');
+        return $this->url($storeId, 'commercegears_iyzico/webhook/index');
     }
 
     /**
@@ -36,7 +36,7 @@ class UrlProvider
      */
     public function getResultUrl(int $storeId, int $orderId): string
     {
-        return $this->url($storeId, 'softaware_iyzico/payment/result', [
+        return $this->url($storeId, 'commercegears_iyzico/payment/result', [
             '_query' => ['r' => $this->orderToken->create($orderId, OrderToken::PURPOSE_RESULT, 7200)],
         ]);
     }
@@ -46,7 +46,7 @@ class UrlProvider
      */
     public function getPaymentPageUrl(int $storeId, int $orderId): string
     {
-        return $this->url($storeId, 'softaware_iyzico/payment/start', [
+        return $this->url($storeId, 'commercegears_iyzico/payment/start', [
             '_query' => ['t' => $this->orderToken->create($orderId, OrderToken::PURPOSE_PAY, 7200)],
         ]);
     }

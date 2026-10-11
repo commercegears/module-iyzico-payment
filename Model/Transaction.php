@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\Model\AbstractModel;
 
@@ -23,7 +23,7 @@ class Transaction extends AbstractModel
     public const STATUS_REVERSED = 'reversed';
     public const STATUS_MISMATCH = 'mismatch';
 
-    protected $_eventPrefix = 'softaware_iyzico_transaction';
+    protected $_eventPrefix = 'commercegears_iyzico_transaction';
 
     protected function _construct()
     {

@@ -1,17 +1,17 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Block;
+namespace CommerceGears\IyzicoPayment\Block;
 
 use Magento\Catalog\Block\Product\View\AbstractView;
 use Magento\Catalog\Block\Product\Context;
 use Magento\Framework\Stdlib\ArrayUtils;
-use Softaware\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Config;
 
 /**
  * "Installment options" placeholder on the product page; the table is loaded after the page (FPC-safe).
@@ -37,11 +37,11 @@ class InstallmentTable extends AbstractView
 
     public function getEndpointUrl(): string
     {
-        return $this->getUrl('softaware_iyzico/installment/table', ['_query' => ['product' => (int)$this->getProduct()->getId()]]);
+        return $this->getUrl('commercegears_iyzico/installment/table', ['_query' => ['product' => (int)$this->getProduct()->getId()]]);
     }
 
     public function getScriptUrl(): string
     {
-        return $this->getViewFileUrl('Softaware_IyzicoPayment::js/installments.js');
+        return $this->getViewFileUrl('CommerceGears_IyzicoPayment::js/installments.js');
     }
 }

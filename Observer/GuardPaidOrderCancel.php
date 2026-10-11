@@ -1,25 +1,25 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Observer;
+namespace CommerceGears\IyzicoPayment\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Payment;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Api\Client;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\PaymentInfo;
-use Softaware\IyzicoPayment\Model\ResultType;
-use Softaware\IyzicoPayment\Model\Transaction;
-use Softaware\IyzicoPayment\Model\TransactionRepository;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\PaymentInfo;
+use CommerceGears\IyzicoPayment\Model\ResultType;
+use CommerceGears\IyzicoPayment\Model\Transaction;
+use CommerceGears\IyzicoPayment\Model\TransactionRepository;
 
 /**
  * Cancelling an iyzico order that waits for payment (admin, API, Magento's pending order clean-up): stops when

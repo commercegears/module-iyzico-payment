@@ -1,22 +1,22 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Cron;
+namespace CommerceGears\IyzicoPayment\Cron;
 
 use Magento\Framework\App\ResourceConnection;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\LockBusyException;
-use Softaware\IyzicoPayment\Model\Log;
-use Softaware\IyzicoPayment\Model\OrderStatusService;
-use Softaware\IyzicoPayment\Model\ResultProcessor;
-use Softaware\IyzicoPayment\Model\StatusChecker;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\LockBusyException;
+use CommerceGears\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\OrderStatusService;
+use CommerceGears\IyzicoPayment\Model\ResultProcessor;
+use CommerceGears\IyzicoPayment\Model\StatusChecker;
 
 /**
  * Every 5 minutes: finishes orders whose callback never came (customer closed the tab, network error) and orders

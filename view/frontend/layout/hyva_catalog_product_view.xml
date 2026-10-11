@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="softaware.iyzico.installments" remove="true"/>
+        <referenceBlock name="commercegears.iyzico.installments" remove="true"/>
         <referenceContainer name="product.info.additional">
-            <block class="Softaware\IyzicoPayment\Block\InstallmentTable" name="softaware.iyzico.installments.hyva"
-                   template="Softaware_IyzicoPayment::hyva/product/installments.phtml"
-                   ifconfig="payment/softaware_iyzico/installment_table"/>
+            <block class="CommerceGears\IyzicoPayment\Block\InstallmentTable" name="commercegears.iyzico.installments.hyva"
+                   template="CommerceGears_IyzicoPayment::hyva/product/installments.phtml"
+                   ifconfig="payment/commercegears_iyzico/installment_table"/>
         </referenceContainer>
     </body>
 </page>

@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Plugin;
+namespace CommerceGears\IyzicoPayment\Plugin;
 
 use Magento\Framework\App\Request\Http;
 use Magento\Framework\Session\SessionStartChecker;
@@ -19,7 +19,7 @@ use Magento\Framework\Session\SessionStartChecker;
  */
 class NoSessionOnCallback
 {
-    private const PATHS = ['/softaware_iyzico/payment/callback', '/softaware_iyzico/webhook'];
+    private const PATHS = ['/commercegears_iyzico/payment/callback', '/commercegears_iyzico/webhook'];
 
     public function __construct(private readonly Http $request)
     {

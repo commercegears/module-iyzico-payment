@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Source;
+namespace CommerceGears\IyzicoPayment\Model\Source;
 
 use Magento\Eav\Model\Config as EavConfig;
 use Magento\Framework\Data\OptionSourceInterface;
@@ -26,8 +26,8 @@ class IdentityAttribute implements OptionSourceInterface
         'default_billing', 'default_shipping', 'created_in', 'fax', 'telephone', 'vat_is_valid', 'vat_request_date',
         'vat_request_id', 'vat_request_success'];
 
-    /** Attributes added by other SoftAware modules for their own purposes. */
-    private const SKIP_PREFIX = 'softaware_';
+    /** Attributes added by other CommerceGears modules for their own purposes. */
+    private const SKIP_PREFIX = 'commercegears_';
 
     public function __construct(private readonly EavConfig $eavConfig)
     {

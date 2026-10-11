@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Api;
+namespace CommerceGears\IyzicoPayment\Model\Api;
 
 use Magento\Framework\HTTP\Client\Curl;
 use Magento\Framework\HTTP\Client\CurlFactory;
 use Magento\Framework\Serialize\Serializer\Json;
-use Softaware\IyzicoPayment\Model\Config;
-use Softaware\IyzicoPayment\Model\Log;
+use CommerceGears\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Log;
 
 /**
  * Small iyzico REST client (IYZWSv2 authentication) on Magento's HTTP client.

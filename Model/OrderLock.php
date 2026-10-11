@@ -1,12 +1,12 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\Exception\NotFoundException;
 use Magento\Framework\Lock\LockManagerInterface;
@@ -37,7 +37,7 @@ class OrderLock
      */
     public function run(int $orderId, callable $work, int $timeout = self::TIMEOUT): mixed
     {
-        $name = 'softaware_iyzico_order_' . $orderId;
+        $name = 'commercegears_iyzico_order_' . $orderId;
         if (!$this->lockManager->lock($name, $timeout)) {
             throw new LockBusyException(__('The order is being updated. Please try again in a moment.'));
         }

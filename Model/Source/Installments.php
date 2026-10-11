@@ -1,15 +1,15 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model\Source;
+namespace CommerceGears\IyzicoPayment\Model\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
-use Softaware\IyzicoPayment\Model\Config;
+use CommerceGears\IyzicoPayment\Model\Config;
 
 class Installments implements OptionSourceInterface
 {

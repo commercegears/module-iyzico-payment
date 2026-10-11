@@ -1,17 +1,17 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Psr\Log\LoggerInterface;
 
 /**
- * Writes to var/log/softaware_iyzico.log. Debug entries only when "Debug Log" is on; errors always.
+ * Writes to var/log/commercegears_iyzico.log. Debug entries only when "Debug Log" is on; errors always.
  *
  * Context data is masked before it is written: API keys, signatures, tokens and payment page URLs are cut to a
  * short prefix, personal data (name, e-mail, phone, identity number, address, IP) is replaced. iyzico never

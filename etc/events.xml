@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="sales_order_payment_cancel">
-        <observer name="softaware_iyzico_guard_paid_order_cancel" instance="Softaware\IyzicoPayment\Observer\GuardPaidOrderCancel"/>
+        <observer name="commercegears_iyzico_guard_paid_order_cancel" instance="CommerceGears\IyzicoPayment\Observer\GuardPaidOrderCancel"/>
     </event>
 </config>

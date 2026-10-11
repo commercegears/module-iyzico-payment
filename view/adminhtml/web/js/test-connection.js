@@ -1,5 +1,5 @@
 /**
- * Softaware_IyzicoPayment: "Test Connection" button in the payment method settings.
+ * CommerceGears_IyzicoPayment: "Test Connection" button in the payment method settings.
  */
 define(['jquery'], function ($) {
     'use strict';

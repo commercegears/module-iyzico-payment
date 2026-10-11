@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -22,10 +22,10 @@
                                                     <item name="children" xsi:type="array">
                                                         <item name="renders" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <item name="softaware-iyzico" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">Softaware_IyzicoPayment/js/view/payment/iyzico</item>
+                                                                <item name="commercegears-iyzico" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">CommerceGears_IyzicoPayment/js/view/payment/iyzico</item>
                                                                     <item name="methods" xsi:type="array">
-                                                                        <item name="softaware_iyzico" xsi:type="array">
+                                                                        <item name="commercegears_iyzico" xsi:type="array">
                                                                             <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
                                                                         </item>
                                                                     </item>

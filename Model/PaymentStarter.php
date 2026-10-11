@@ -1,20 +1,20 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Stdlib\DateTime\DateTime;
 use Magento\Sales\Model\Order;
-use Softaware\IyzicoPayment\Model\Api\ApiException;
-use Softaware\IyzicoPayment\Model\Api\Client;
-use Softaware\IyzicoPayment\Model\Api\Signature;
-use Softaware\IyzicoPayment\Model\Request\CheckoutFormRequest;
+use CommerceGears\IyzicoPayment\Model\Api\ApiException;
+use CommerceGears\IyzicoPayment\Model\Api\Client;
+use CommerceGears\IyzicoPayment\Model\Api\Signature;
+use CommerceGears\IyzicoPayment\Model\Request\CheckoutFormRequest;
 
 /**
  * Opens iyzico's Checkout Form for an unpaid order. A still valid form of the same order is reused, so opening the

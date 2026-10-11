@@ -1,18 +1,18 @@
 <?php
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\IyzicoPayment\Model;
+namespace CommerceGears\IyzicoPayment\Model;
 
-use Softaware\IyzicoPayment\Model\ResourceModel\Transaction as TransactionResource;
-use Softaware\IyzicoPayment\Model\ResourceModel\Transaction\CollectionFactory;
+use CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction as TransactionResource;
+use CommerceGears\IyzicoPayment\Model\ResourceModel\Transaction\CollectionFactory;
 
 /**
- * Loads and saves iyzico payment rows (softaware_iyzico_transaction).
+ * Loads and saves iyzico payment rows (commercegears_iyzico_transaction).
  */
 class TransactionRepository
 {

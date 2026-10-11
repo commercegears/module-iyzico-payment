@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!--
 /**
- * @category  Softaware
- * @package   Softaware_IyzicoPayment
- * @copyright Copyright © Softaware Commerce Ltd (https://softawarecommerce.com/)
+ * @category  CommerceGears
+ * @package   CommerceGears_IyzicoPayment
+ * @copyright Copyright © CommerceGears (https://commercegears.com/)
  */
 -->
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
-    <route url="/V1/softaware-iyzico/mine/orders/:orderId/payment-url" method="GET">
-        <service class="Softaware\IyzicoPayment\Api\PaymentUrlManagementInterface" method="getForCustomer"/>
+    <route url="/V1/commercegears-iyzico/mine/orders/:orderId/payment-url" method="GET">
+        <service class="CommerceGears\IyzicoPayment\Api\PaymentUrlManagementInterface" method="getForCustomer"/>
         <resources>
             <resource ref="self"/>
         </resources>
@@ -16,8 +16,8 @@
             <parameter name="customerId" force="true">%customer_id%</parameter>
         </data>
     </route>
-    <route url="/V1/softaware-iyzico/guest-carts/:cartId/orders/:orderId/payment-url" method="GET">
-        <service class="Softaware\IyzicoPayment\Api\PaymentUrlManagementInterface" method="getForGuest"/>
+    <route url="/V1/commercegears-iyzico/guest-carts/:cartId/orders/:orderId/payment-url" method="GET">
+        <service class="CommerceGears\IyzicoPayment\Api\PaymentUrlManagementInterface" method="getForGuest"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
