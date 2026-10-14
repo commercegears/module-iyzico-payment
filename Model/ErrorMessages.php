@@ -23,15 +23,21 @@ class ErrorMessages
         'card' => ['10041', '10043', '10057', '10093', '10201', '10209', '10213', '10215', '10225', '10226', '10227', '10233', '10235', '12'],
         'installment' => ['10218', '10222', '10250'],
         'foreign' => ['10221'],
-        'threeds' => ['10217', '10230', 'CALLBACK_3DS', 'INIT_3DS', '5014'],
-        'aborted' => ['10239'],
+        'threeds' => ['10217', '10230', 'CALLBACK_3DS', 'INIT_3DS', '5014', 'NOT_PAID_3DS'],
+        'aborted' => ['10239', 'NOT_PAID'],
         'timeout' => ['10214', '10216', '10219', '10228', '10240', '10241', '10242'],
         'fraud' => ['6000', '6001'],
     ];
 
+    /** Prefix of the code stored for a failed 3-D Secure verification (iyzico sends only mdStatus then). */
+    public const THREEDS_PREFIX = 'MDSTATUS_';
+
     public function forCode(?string $code): Phrase
     {
         $code = trim((string)$code);
+        if (str_starts_with($code, self::THREEDS_PREFIX)) {
+            return $this->phrase('threeds');
+        }
         foreach (self::GROUPS as $group => $codes) {
             if (in_array($code, $codes, true)) {
                 return $this->phrase($group);

@@ -101,6 +101,7 @@ Given back (duplicate or late),İade edildi (mükerrer ya da geç ödeme)
 Needs attention,İlgi gerektiriyor
 "The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.",Müşteri iyzico ödeme sayfasından ödeme yapmadan ayrıldı. iyzico'da bu sipariş için ödeme olmadığından sipariş iptal edildi.
 iyzico has no payment for this order. The unpaid order was cancelled.,iyzico'da bu sipariş için ödeme yok. Ödenmemiş sipariş iptal edildi.
+"The customer did not complete the 3-D Secure verification, so iyzico took no payment. The unpaid order was cancelled.","Müşteri 3-D Secure doğrulamasını tamamlamadığı için iyzico ödeme almadı. Ödenmemiş sipariş iptal edildi."
 iyzico approved payment %1 after its review. The order can be shipped.,iyzico %1 numaralı ödemeyi inceleme sonrasında onayladı. Sipariş kargolanabilir.
 iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.,iyzico %1 numaralı ödemeyi inceleme sonrasında reddetti ve tutarı müşteriye iade ediyor. Sipariş iptal edildi.
 "iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it.","iyzico'da %1 numaralı sipariş için bir ödeme var (ya da devam eden bir ödeme). Siparişi iptal etmek yerine sipariş sayfasındaki ""Durumu iyzico'da Kontrol Et"" düğmesini kullanın."

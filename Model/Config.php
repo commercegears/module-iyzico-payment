@@ -165,6 +165,11 @@ class Config
         if ($value === '' || preg_match('/^\*+$/', $value)) {
             return '';
         }
+        // config.xml declares the Encrypted backend model, so Magento usually hands over the decrypted value
+        // already; decrypting that again would turn a correct key into garbage. Only decrypt stored ciphertext.
+        if (preg_match('/^\d+:\d+:/', $value) !== 1) {
+            return $value;
+        }
         return trim((string)$this->encryptor->decrypt($value));
     }
 }

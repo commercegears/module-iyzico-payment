@@ -101,6 +101,7 @@ Given back (duplicate or late),Given back (duplicate or late)
 Needs attention,Needs attention
 "The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.","The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled."
 iyzico has no payment for this order. The unpaid order was cancelled.,iyzico has no payment for this order. The unpaid order was cancelled.
+"The customer did not complete the 3-D Secure verification, so iyzico took no payment. The unpaid order was cancelled.","The customer did not complete the 3-D Secure verification, so iyzico took no payment. The unpaid order was cancelled."
 iyzico approved payment %1 after its review. The order can be shipped.,iyzico approved payment %1 after its review. The order can be shipped.
 iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.,iyzico rejected payment %1 after its review and gives the money back to the customer. The order was cancelled.
 "iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it.","iyzico has a payment for order %1 (or one still in progress). Use ""Check Status at iyzico"" on the order page instead of cancelling it."

@@ -88,6 +88,11 @@ class ResultProcessor
     {
         $code = (string)($result['errorCode'] ?? ($result['paymentStatus'] ?? ''));
         $message = (string)($result['errorMessage'] ?? '');
+        if (!isset($result['errorCode']) && isset($result['mdStatus']) && (string)$result['mdStatus'] !== '1') {
+            // 3-D Secure failed at the bank (wrong code, cancelled): iyzico sends no error code, only mdStatus.
+            $code = ErrorMessages::THREEDS_PREFIX . (string)$result['mdStatus'];
+            $message = $message !== '' ? $message : '3-D Secure verification failed (mdStatus ' . $result['mdStatus'] . ')';
+        }
         // Only a final answer (callback) marks the form as failed: a notification about one declined card can
         // arrive while the customer is still trying another card in the same form.
         if ($cancel && $transaction && $transaction->getStatus() === Transaction::STATUS_STARTED) {

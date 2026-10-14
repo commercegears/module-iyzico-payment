@@ -32,6 +32,10 @@ class StatusChecker
     /** Bank transfer / shopping credit can stay open for days (docs: bank transfer time limit 5 days). */
     private const MAX_PENDING_DAYS = 8;
 
+    /** 3-D Secure verification takes minutes; a payment still waiting for it after this long was abandoned. */
+    private const MAX_THREEDS_HOURS = 3;
+    private const THREEDS_STATUSES = ['INIT_THREEDS', 'CALLBACK_THREEDS'];
+
     private const FINAL_OUTCOMES = [
         ResultProcessor::OUTCOME_PAID, ResultProcessor::OUTCOME_REVIEW, ResultProcessor::OUTCOME_ALREADY,
         ResultProcessor::OUTCOME_REVERSED, ResultProcessor::OUTCOME_MISMATCH,
@@ -87,10 +91,12 @@ class StatusChecker
         }
 
         $outcomes = [];
+        $open = [];
         foreach ($this->transactions->getForOrder((int)$order->getId(), 10) as $transaction) {
             if ($transaction->getStatus() !== Transaction::STATUS_STARTED) {
                 continue;
             }
+            $open[] = $transaction;
             $outcome = $this->checkToken($order, $transaction, $source, false, $timeout);
             if (in_array($outcome, self::FINAL_OUTCOMES, true)) {
                 return $outcome;
@@ -119,15 +125,34 @@ class StatusChecker
         if (ResultType::of($byOrderNumber) === ResultType::PAID) {
             return $this->processor->process($order, null, $byOrderNumber, 'payment_detail', $source, false);
         }
+        $abandonedThreeDs = false;
         if (ResultType::of($byOrderNumber) === ResultType::PENDING) {
-            return ResultProcessor::OUTCOME_PENDING;
+            // A card payment stuck in 3-D Secure (the customer closed the bank's verification page) stays in that
+            // state at iyzico for good and no money was taken; after a few hours it is treated as not paid.
+            $abandonedThreeDs = $mayCancel && $this->isAbandonedThreeDs($order, $byOrderNumber);
+            if (!$abandonedThreeDs) {
+                return ResultProcessor::OUTCOME_PENDING;
+            }
         }
         if (!$mayCancel) {
             return ResultProcessor::OUTCOME_FAILED;
         }
-        $this->canceller->cancel($order, $source === StatusChecker::SOURCE_CUSTOMER
-            ? __('The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.')
-            : __('iyzico has no payment for this order. The unpaid order was cancelled.'));
+        // The payment forms of the order were not paid: show them as failed in the transactions grid, not "opened".
+        foreach ($open as $transaction) {
+            if ($transaction->getStatus() === Transaction::STATUS_STARTED) {
+                $transaction->addData([
+                    'status' => Transaction::STATUS_FAILED,
+                    'error_code' => $abandonedThreeDs ? 'NOT_PAID_3DS' : 'NOT_PAID',
+                    'error_message' => 'No payment at iyzico; the order was cancelled.',
+                ]);
+                $this->transactions->save($transaction);
+            }
+        }
+        $this->canceller->cancel($order, match (true) {
+            $abandonedThreeDs => __('The customer did not complete the 3-D Secure verification, so iyzico took no payment. The unpaid order was cancelled.'),
+            $source === StatusChecker::SOURCE_CUSTOMER => __('The customer left the iyzico payment page without paying. iyzico has no payment for this order, so it was cancelled.'),
+            default => __('iyzico has no payment for this order. The unpaid order was cancelled.'),
+        });
         $this->log->info('Unpaid order cancelled', ['order' => $order->getIncrementId(), 'source' => $source]);
         return ResultProcessor::OUTCOME_FAILED;
     }
@@ -196,6 +221,18 @@ class StatusChecker
             return ResultProcessor::OUTCOME_FAILED;
         }
         return ResultProcessor::OUTCOME_REVIEW;
+    }
+
+    /**
+     * True when iyzico's latest payment for the order is still waiting for 3-D Secure long after the order was placed.
+     */
+    private function isAbandonedThreeDs(Order $order, array $detail): bool
+    {
+        if (!in_array(strtoupper((string)($detail['paymentStatus'] ?? '')), self::THREEDS_STATUSES, true)) {
+            return false;
+        }
+        $age = time() - strtotime((string)$order->getCreatedAt() . ' UTC');
+        return $age >= self::MAX_THREEDS_HOURS * 3600;
     }
 
     /**
