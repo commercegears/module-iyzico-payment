@@ -46,7 +46,8 @@ Only the API key and the secret key are required. Everything else has a sensible
   cancelled. An order is only cancelled after iyzico answered for every payment form of the order and for the order
   number itself, and none is paid or still under way (bank transfer / shopping credit can take days; those orders
   are kept and also protected from Magento's own "Pending Payment Order Lifetime" clean-up while iyzico reports them
-  as under way).
+  as under way). A card payment left in 3-D Secure (the customer closed the bank's verification page) counts as unpaid
+  once the order is 3 hours old, because iyzico keeps it in that state and takes no money.
 - **Webhook** (merchant notifications) and **fraud notifications**: checked against X-IYZ-SIGNATURE-V3 when iyzico
   signs them, and in every case only used as a hint: the store re-reads the payment from the API. Unknown payments are
   acknowledged and ignored.
@@ -166,18 +167,24 @@ or logged.
 
 ## Testing in the sandbox
 
-Sandbox cards (any future expiry date, any CVC in the right format; the sandbox 3-D Secure / OTP code is `123456`):
+Sandbox cards (any future expiry date, any CVC in the right format; the sandbox 3-D Secure page shows the code to
+enter, `123456` is the documented default):
 
 | Card | Result |
 |---|---|
 | 5526 0800 0000 0006 (Akbank Mastercard credit) | success |
 | 4766 6200 0000 0001 (Denizbank Visa debit) | success |
 | 5400 0100 0000 0004 | foreign card (success, or refused if your account blocks foreign cards) |
+| 4054 1800 0000 0007 (Visa debit, issued outside Türkiye) | success, also in GBP / USD / EUR |
 | 4111 1111 1111 1129 | insufficient funds |
 | 4129 1111 1111 1111 | do not honour |
 | 4124 1111 1111 1116 | invalid CVC |
 | 4131 1111 1111 1117 | 3-D Secure failed (mdStatus 0) |
 | 5406 6700 0000 0009 | success, but cannot be cancelled or refunded |
+
+Payments in a currency other than TRY (GBP, USD, EUR, NOK, CHF) are accepted only from cards issued outside Türkiye:
+iyzico's form refuses Turkish cards with "You can not pay foreign currency with local credit card". Test such a
+store with the foreign cards above; the Turkish test cards work only in a TRY store.
 
 Full list: https://docs.iyzico.com/en/add-ons/test-cards
 
@@ -210,6 +217,11 @@ phone, identity number, address, IP) is masked. iyzico never sends card numbers 
 
 - Checkout Form only (no on-site card form, no pre-authorisation / later capture, no marketplace).
 - Installment charges are not added to Magento's order totals (see above).
+- "On this store's page" relies on Magento's default report-only Content Security Policy on storefront pages: during
+  3-D Secure the frame moves to iyzico's and the bank's pages, which a frame-src whitelist cannot list in advance. If
+  you enforce CSP (restrict mode) on all storefront pages, use the redirect.
+- Payments in currencies other than TRY need a card issued outside Türkiye (iyzico rule), and your iyzico account
+  must be allowed to take foreign cards and that currency.
 - Installments are generally available for TRY payments only (iyzico / Turkish banks); the product page table is shown
   for TRY prices only.
 - A refund that spans several basket items and fails part-way cannot be undone; the module stops, shows what was

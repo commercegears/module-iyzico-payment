@@ -1,0 +1,116 @@
+{
+    "tagline": "Take card payments with iyzico's hosted Checkout Form: redirect or a frame on your own page, results verified with iyzico's API before the order is invoiced, online refunds from credit memos and automatic handling of lost callbacks.",
+    "key_features": [
+        "iyzico Checkout Form by redirect or in a frame on your page",
+        "Card details never reach your store (PCI SAQ A)",
+        "Results fetched from iyzico's API and checked before capture",
+        "Declined and abandoned payments: order cancelled, basket restored",
+        "Lost callbacks and fraud reviews finished by a cron job",
+        "Online full and partial refunds from credit memos",
+        "iyzico panel on the order and a transactions grid with CSV export",
+        "Luma and Hyvä, English and Turkish"
+    ],
+    "benefits": [
+        {
+            "icon": "shield",
+            "title": "Never trusts the browser",
+            "text": "The store asks iyzico's API for the result and registers a payment only when the status, order number, currency, amount and response signature all match the order."
+        },
+        {
+            "icon": "cart",
+            "title": "Customers keep their basket",
+            "text": "When a card is declined, 3-D Secure fails or the customer comes back without paying, the order is cancelled, the basket restored and a clear message shown, so they can try again."
+        },
+        {
+            "icon": "clock",
+            "title": "No order left behind",
+            "text": "Every 5 minutes a cron job asks iyzico about orders still waiting: paid ones are invoiced, unpaid ones cancelled, payments still under way kept."
+        }
+    ],
+    "showcase": [
+        {
+            "label": "Checkout",
+            "title": "Credit / Debit Card (iyzico)",
+            "text": "The method shows the iyzico, Mastercard, Visa, American Express and Troy logo band and is offered only when the keys are set and the basket currency is one iyzico accepts."
+        },
+        {
+            "label": "Payment page",
+            "title": "Redirect or on your own page",
+            "text": "Send customers to iyzico's payment page, or show iyzico's form in a frame between your header and footer. 3-D Secure, installments and Pay with iyzico come with the form."
+        },
+        {
+            "label": "Order view",
+            "title": "iyzico panel on every order",
+            "text": "Status, payment ID, card, BIN, installments, amount charged, iyzico fees and refunds, with a Check Status at iyzico button for orders still waiting."
+        },
+        {
+            "label": "Transactions",
+            "title": "Every payment form and its outcome",
+            "text": "CommerceGears > iyzico > iyzico Transactions lists each payment form opened with order, payment ID, amounts, status, card and error code, with filters and CSV export."
+        },
+        {
+            "label": "Refunds",
+            "title": "Refund from the credit memo",
+            "text": "Full or partial online refunds, several in a row. A full refund on the day of payment uses iyzico's cancel, so nothing appears on the card statement."
+        }
+    ],
+    "feature_groups": [
+        {
+            "title": "Checkout",
+            "items": [
+                "Redirect to iyzico's payment page (any theme) or iyzico's form in a frame (Luma and Hyvä)",
+                "Payment page language from the store view, or fixed Turkish or English",
+                "Installment counts can be limited, for example 1, 3 and 6",
+                "Currencies TRY, USD, EUR, GBP, NOK and CHF",
+                "Reopening the payment page reuses the open form instead of starting a second payment"
+            ]
+        },
+        {
+            "title": "Payment safety",
+            "items": [
+                "Result checked against order number, currency, amount and response signature",
+                "Per-order lock: callback, webhook, cron and admin never invoice an order twice",
+                "A second or late payment for a paid or cancelled order is given back automatically",
+                "A waiting order cannot be cancelled while iyzico has a payment for it",
+                "Merchant notifications (webhook) with X-IYZ-SIGNATURE-V3 check, used only to ask iyzico again"
+            ]
+        },
+        {
+            "title": "After the payment",
+            "items": [
+                "Invoice captured with the iyzico payment ID, order e-mail sent after payment",
+                "Fraud reviews held in Payment Review and finished when iyzico decides",
+                "Online refunds per basket item, installment charge refunded in proportion",
+                "Optional installment table on product pages for TRY prices"
+            ]
+        },
+        {
+            "title": "Admin and developers",
+            "items": [
+                "Test Connection button and the notification URL in the settings",
+                "Keys stored encrypted, separate log file with personal data masked",
+                "CLI: bin/magento commercegears:iyzico:check",
+                "REST endpoints that return the payment page URL for headless stores",
+                "Own ACL permissions for transactions, status checks and settings"
+            ]
+        }
+    ],
+    "demo": {
+        "storefront": [
+            {
+                "label": "Add this product to the basket and pay at checkout (Luma), sandbox card 4054 1800 0000 0007",
+                "url": "https://demo.commercegears.com/impulse-duffle.html"
+            },
+            {
+                "label": "The same on Hyvä (Luma checkout fallback)",
+                "url": "https://demo.commercegears.com/hyva/impulse-duffle.html"
+            }
+        ],
+        "admin": [
+            {
+                "label": "Admin panel (iyzico Payment)",
+                "url": "https://demo.commercegears.com/try-admin/iyzico-payment"
+            }
+        ]
+    }
+}
