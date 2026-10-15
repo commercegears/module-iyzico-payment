@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.0 (2026-10-15)
+New: German translation of the checkout and payment texts.
+
 ## 1.0.1 (2026-10-14)
 - Fix: valid API keys were refused by iyzico, so Test Connection and payments failed.
 - Fix: orders whose customer left the 3-D Secure page are cancelled after 3 hours instead of waiting.
