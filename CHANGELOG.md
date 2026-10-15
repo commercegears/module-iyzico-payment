@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.1.0 (2026-10-15)
-New: German translation of the checkout and payment texts.
+- New: German translation of the checkout and payment texts.
 
 ## 1.0.1 (2026-10-14)
 - Fix: valid API keys were refused by iyzico, so Test Connection and payments failed.
